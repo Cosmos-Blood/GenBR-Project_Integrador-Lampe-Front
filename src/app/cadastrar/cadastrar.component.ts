@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioModel } from '../model/UsuarioModel';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -9,9 +10,30 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
+  usuarioModel: UsuarioModel = new UsuarioModel();
+  confirmarSenha: string;
+
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
+    window.scroll(0, 0);
+  }
+
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value;
+  }
+
+  cadastrar() {
+
+    if (this.usuarioModel.senhaUsuario != this.confirmarSenha) {
+      alert('As senhas estão diferentes');
+    } else {
+      this.authService.cadastrar(this.usuarioModel).subscribe((resp: UsuarioModel) => {
+        this.usuarioModel = resp;
+        this.router.navigate(['/entrar']);
+        alert('Usuario cadastrado com sucesso!');
+      });
+    }
   }
 
 }

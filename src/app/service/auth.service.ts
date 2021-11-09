@@ -12,14 +12,14 @@ export class AuthService {
 
   cadastrar(usuarioModel: UsuarioModel): Observable<UsuarioModel> {
     return this.http.post<UsuarioModel>(
-      'https://energylampe.herokuapp.com/api/v1/cadastrar',
+      'https://energylampe.herokuapp.com/api/v1/usuario/cadastrar',
       usuarioModel
     );
   }
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
     return this.http.post<UsuarioLogin>(
-      'https://energylampe.herokuapp.com/api/v1/login',
+      'https://energylampe.herokuapp.com/api/v1/usuario/login',
       usuarioLogin
     );
   }
