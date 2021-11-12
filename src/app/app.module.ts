@@ -10,6 +10,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { FeedComponent } from './feed/feed.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     RodapeComponent,
     SobreComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
