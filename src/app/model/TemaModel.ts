@@ -5,5 +5,5 @@ export class TemaModel{
     public primarioTema: string;
     public secundarioTema: string;
     public eventosTema: string;
-    public postagens: PostagemModel;
+    public postagens: PostagemModel[];
 }
