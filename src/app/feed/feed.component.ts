@@ -25,7 +25,15 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    this.getAllPostagens();
   }
+  getAllPostagens(){
+    this.postagemService.getAllPostagens().subscribe((resp: PostagemModel[])=>{
+      this.listaDePostagens = resp;
+      console.log(this.listaDePostagens)
+    })
+  }
+
    getAllTemas(){
      this.temaService.getAllTemas().subscribe((resp: TemaModel[])=>{
       this.listaDeTemas = resp
@@ -46,7 +54,6 @@ export class FeedComponent implements OnInit {
        this.postagem = resp
        alert("Postagem efetuada!")
        this.postagemService.getAllPostagens()
-
      })
    }
 }
