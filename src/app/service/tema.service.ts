@@ -25,6 +25,9 @@ export class TemaService {
     return this.http.get<TemaModel[]>("https://energylampe.herokuapp.com/api/v1/tema", this.token)
 
   }
+  getByIdTema(id: number): Observable<TemaModel>{
+    return this.http.get<TemaModel>(`https://energylampe.herokuapp.com/api/v1/tema/pesquisar/${id}`, this.token )
+  }
   postTema(tema: TemaModel) :Observable<TemaModel>{
     return this.http.post<TemaModel>("https://energylampe.herokuapp.com/api/v1/tema/salvar", tema, this.token)
   }

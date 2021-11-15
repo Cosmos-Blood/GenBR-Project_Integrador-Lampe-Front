@@ -30,14 +30,12 @@ export class FeedComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: PostagemModel[])=>{
       this.listaDePostagens = resp;
-      console.log(this.listaDePostagens)
     })
   }
 
    getAllTemas(){
      this.temaService.getAllTemas().subscribe((resp: TemaModel[])=>{
       this.listaDeTemas = resp
-      console.log(this.listaDeTemas)
      })
    }
    postTema(){
