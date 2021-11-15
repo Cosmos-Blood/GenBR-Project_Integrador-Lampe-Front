@@ -11,6 +11,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FeedComponent } from './feed/feed.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FeedComponent } from './feed/feed.component';
     SobreComponent,
     EntrarComponent,
     CadastrarComponent,
-    FeedComponent
+    FeedComponent,
+    PostagemEditComponent
   ],
   imports: [
     BrowserModule,

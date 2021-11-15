@@ -1,0 +1,41 @@
+<div class="modal-body">
+  <form action="form">
+    <input
+      name="texto"
+      id="texto"
+      class="form-control"
+      type="text"
+      placeholder="postagem.textoPostagem"
+      [(ngModel)]="postagem.textoPostagem"
+    />
+    <input
+      name="privacidade"
+      id="privacidade"
+      class="form-control"
+      type="text"
+      placeholder="Privacidade"
+      [(ngModel)]="postagem.privacidade"
+    />
+    <textarea
+      class="form-control my-3"
+      name="anexo"
+      id="anexo"
+      cols="30"
+      rows="3"
+      placeholder="Anexo"
+      [(ngModel)]="postagem.anexoPostagem"
+    ></textarea>
+    <select
+      [(ngModel)]="idTema"
+      (change)="getByIdTema()"
+      class="form-control"
+      name="Tema"
+      id="Tema"
+    >
+      <option *ngFor="let tema of listaDeTemas" value="{{ tema.id }}">
+        {{ tema.primarioTema }}
+      </option>
+    </select>
+    <button class="btn btn-dark" (click)="atualizar()">Atualizar</button>
+  </form>
+</div>
