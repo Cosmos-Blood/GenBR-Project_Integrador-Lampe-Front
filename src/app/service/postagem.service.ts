@@ -44,4 +44,8 @@ export class PostagemService {
       this.token
     );
   }
+  deletePostagem(id: number){
+    return this.http.delete(`https://energylampe.herokuapp.com/api/v1/postagem/excluir/${id}`,
+     this.token)
+  }
 }
