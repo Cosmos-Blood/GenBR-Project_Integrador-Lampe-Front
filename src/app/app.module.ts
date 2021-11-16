@@ -13,6 +13,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     CadastrarComponent,
     FeedComponent,
     PostagemEditComponent,
-    PostagemDeleteComponent
+    PostagemDeleteComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

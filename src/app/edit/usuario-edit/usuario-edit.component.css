@@ -1,0 +1,44 @@
+label{
+    color: white;
+}
+
+.fs-56{
+    font-size: 56px;
+  }
+  
+  .color-grey{
+    background-color: #ADADAD;
+  }
+  .color-dark-brown{
+    background-color: #241616;    
+  }
+  .color-blue{
+    background-color: #4C579E;
+  }
+  .color-brown{
+    background-color: #412828;
+  }
+  .color-red{
+    background-color: #ca1010;
+  }
+
+.btn-hover-red {
+    background-color: #ca1010;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  .btn-hover-red:hover {opacity: 1}
+  
+  .btn-hover-dark {
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
