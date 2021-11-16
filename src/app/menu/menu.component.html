@@ -1,36 +1,120 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-            Opções
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/feed">Feed</a>
-            <a class="dropdown-item" routerLink="/entrar">Login</a>
-            <a class="dropdown-item" routerLink="/cadastrar">Cadastro</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+<!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+
+    <div class=" container-fluid w-100 p-0">
+
+      <!-- Levando em conta o código do blog, a classe abaixo não exsite -->
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+
+      <!-- Algumas classses deste button, foram editadas, confrome o código do blog -->
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-start">
+        <ul class="navbar-nav me-auto d-flex align-itens-center">
+          <div>
+            <li class="nav-item active">
+              <a class="nav-link text-light font-weight-bold" href="#"> Início <span class="sr-only">(current)</span></a>
+            </li>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+          <div>
+            <li class="nav-item active">
+              <a class="nav-link text-light font-weight-bold" href="#"> História <span class="sr-only">(current)</span></a>
+            </li>
+          </div>
+
+          <div>
+            <li class="nav-item active">
+              <a class="nav-link text-light font-weight-bold" href="#"> Tecnologias <span class="sr-only">(current)</span></a>
+            </li>
+          </div>
+
+          <div>
+            <li class="nav-item active">
+              <a class="nav-link text-light font-weight-bold" href="#"> Equipe <span class="sr-only">(current)</span></a>
+            </li>
+          </div>
+
+          <div>
+            <li class="nav-item active">
+              <a class="nav-link text-light font-weight-bold" href="#"> Contato <span class="sr-only">(current)</span></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto d-flex align-itens-center">
+
+        <!-- O trecho abaixo se refere ao icone com a foto do usuário, o mesmo não está funcional -->
+        <!--<li class="nav-item active">
+              <img src="{{foto}}"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                  class="img-fluid rounded-circle">
+            </li>-->
+
+        <!-- O trecho abaixo se refere ao nome do usuário, o mesmo não está funcional -->
+        <!-- <li class="nav-item pl-3">
+                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}/p>
+              </li>-->
+
+        <!-- O treco abaixo, refere-se ao routerlik, que puxa o usuário, junto do icone de sua foto e nome. O mesmo não está funcional -->
+        <!--<li class="nav-item pl-3">
+              <a [routerLink]="['/user-edit', id]">
+                <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+              </a>
+            </li>-->
+      <!-- <div> -->
+
+        <!-- <li class="nav-item"> -->
+          <!-- Os router link destas classes, não estão de acordo com a forma de routerlink do blog -->
+          <!-- O feed, deveria estar disponível na tela inicial? -->
+          <!-- <a class="text-light font-weight-bold" routerLink="/feed">Feed</a> -->
+
+          <!-- <a class="text-light font-weight-bold" routerLink="/entrar">Entrar</a> -->
+        <!-- </li> -->
+      <!-- </div> -->
+      <!-- <div> -->
+        <!-- <li> -->
+          <!-- <a class="text-light font-weight-bold" routerLink="/cadastrar">Cadastro</a> -->
+        <!-- </li> -->
+      <!-- </div> -->
+
+          <div class="col-md-6" >
+            <div>
+              <a class="nav-link text-light font-weight-bold pl-0" routerLink="/entrar" href="#/entrar">Entrar</a>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <a class="nav-link text-light font-weight-bold pl-0" routerLink="/cadastrar" >Cadastrar</a>
+            </div>
+          </div>
+        </ul>
+
+      <!-- O trecho abaixo, refere-se ao icone de sair, o mesmo não está funcional -->
+      <!--<ul class="navbar-nav ml-auto d-flex align-itens-center">
+            <li class="nav-item pl-3">
+              <a (click)= "sair"
+                class="m-0 font-weight-bold text-white fs-16">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+          </ul>-->
+  <!-- </div> -->
+
+      </div>
     </div>
-  </nav>
+</nav>
+<!-- NavBar -->
