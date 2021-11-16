@@ -1,54 +1,89 @@
-<div>
-  <form>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        id="email"
-        aria-describedby="emailHelp"
-        [(ngModel)]="usuarioModel.emailUsuario"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
-        name="senha"
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-        [(ngModel)]="usuarioModel.senhaUsuario"
-      />
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    <div id="image-backgroud" class="col-md-5 color-dark-brown"></div>
 
-    <div class="mb-3">
-      <label for="confirmSenha" class="form-label">Confirm Password</label>
-      <input
-        name="confirmSenha"
-        type="password"
-        class="form-control"
-        id="confirmSenha"
-        (input)="confirmSenha($event)"
-      />
-    </div>
+    <div class="col-md-7 color-brown d-flex align-items-center justify-content-center">
+      <div class="row d-flex justify-content-center vw-100">
+        <div class="col-md-10">
+          <h1 class="text-center fs-56 text-white">Cadastro</h1>
 
-    <div class="mb-3">
-      <label for="" class="form-label">Nome</label>
-      <input
-        name="nome"
-        type=""
-        class="form-control"
-        id="nome"
-        [(ngModel)]="usuarioModel.nomeUsuario"
-      />
+          <div class="form-group text-white m-1">
+            <label for="nome">Nome:</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Digite seu nome:"
+            />
+          </div>
+
+          <div class="form-group text-white m-1">
+            <label for="usuario">Email:</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="text"
+              name="usuario"
+              id="usuario"
+              placeholder="Digite seu email:"
+            />
+          </div>
+
+          <div class="form-group text-white m-1">
+            <label for="foto">Link da foto:</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="text"
+              name="foto"
+              id="foto"
+              placeholder="Insira o link da sua foto:"
+            />
+          </div>
+
+          <div class="form-group text-white m-1">
+            <label for="senha">Senha:</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Digite sua senha:"
+            />
+          </div>
+
+          <div class="form-group text-white m-1">
+            <label for="ConfirmarSenha">Confirmar a senha:</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="password"
+              name="ConfirmarSenha"
+              id="ConfirmarSenha"
+              placeholder="Digite sua senha novamente:"
+            />
+          </div>
+
+          <div class="form-group text-white m-1">
+            <label for="tipo">Tipo de Usuário</label>
+            <select
+              class="form-control color-brown rounded-pill text-white"
+              name="tipo"
+              id="tipo"
+            >
+              <option>Selecione uma categoria:</option>
+              <option value="normal">Comum</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+
+          <div class="d-flex justify-content-end mt-4 ml-5 mr-5 mb-3">
+            <button type="submit" class="btn btn-lg rounded-pill btn-hover-red">
+              Cancelar
+            </button>
+            <button type="submit" class="btn ml-4 btn-lg rounded-pill btn-hover-dark">
+              Cadastrar</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <button
-    type="submit"
-    class="btn bt-entrar text-white bg-dark"
-    (click)="cadastrar()"
-  >
-    Cadastrar
-  </button>
-  </form>
+  </div>
 </div>
