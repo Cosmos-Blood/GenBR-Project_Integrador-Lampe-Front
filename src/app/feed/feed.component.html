@@ -1,170 +1,142 @@
-<button class="btn btn-dark" (click)="getAllTemas()">Teste get tema</button
-><br />
-<input
-  type="text"
-  placeholder="primario tema"
-  name="tema"
-  id="tema"
-  [(ngModel)]="tema.primarioTema"
-/><br />
-<button class="btn btn-dark" (click)="postTema()">Teste Post Tema</button><br />
-<br />
-<br />
-<br />
+<div class="container-fluid color-dark-grey p-0">
 
-<button class="btn btn-dark" (click)="getAllPostagens()">
-  Teste Get Postagem</button
-><br />
+  <div class="d-flex col-md-10 py-4 p-0" id="postagens">
+  
+    <div class="col-md-4 mt-3 p-0">
 
-<div class="container">
-  <ul
-    class="nav nav-tabs d-flex justify-content-center"
-    id="myTab"
-    role="tablist"
-  >
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link active"
-        id="home-tab"
-        data-toggle="tab"
-        href="#home"
-        role="tab"
-        aria-controls="home"
-        aria-selected="true"
-        >Todas as postagens</a
-      >
+    
+      <!--NavsTabs-->
+    <ul class="nav nav-tabs bg-dark rounded position-fixed col-md-2 d-flex justify-content-center p-2" id="myTab" role="tablist">
+  
+      <!--Todas Postagens-->
+    <li class="nav-item col-md-12 mt-3" role="presentation">
+      <a class="nav-link active color-light-grey" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas Postagens</a>
     </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        id="profile-tab"
-        data-toggle="tab"
-        href="#profile"
-        role="tab"
-        aria-controls="profile"
-        aria-selected="false"
-        >Minhas postagens</a
-      >
+    <!--Todas Postagens-->
+
+    
+    <!--Procurar Postagens-->
+    <li class="nav-item col-md-12" role="presentation">
+      <a class="nav-link color-light-grey" id="nav-procurarPostagens-tab" data-toggle="tab" href="#procurarPostagens" role="tab" aria-controls="procurarPostagens" aria-selected="false">Procurar Postagens</a>
     </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        id="contact-tab"
-        data-toggle="tab"
-        href="#contact"
-        role="tab"
-        aria-controls="contact"
-        aria-selected="false"
-        >Postagens por tema</a
-      >
+    <!--Procurar Postagens-->
+    
+    <!--Minhas Postagens-->
+    <li class="nav-item my-4 color-orange rounded-pill" role="presentation">
+      <a class="nav-link text-dark" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Gerar Postagem</a>
     </li>
+    <!--Minhas Postagens-->
+    
   </ul>
+    </div>
 
-  <div class="tab-content" id="myTabContent">
-    <!-- inicio de todas as postagens -->
-    <div
-      class="tab-pane fade show active"
-      id="home"
-      role="tabpanel"
-      aria-labelledby="home-tab"
-    >
-      <div class="card-columns">
-        <div class="card text-center" *ngFor="let postagem of listaDePostagens">
-          <div class="card-body">
-            <h5 class="card-title m-0">{{ postagem.textoPostagem }}</h5>
-            <small class="text-muted"
-              >by {{ postagem.usuarioPostagem.nomeUsuario }}</small
-            >
-            <p class="card-text mt-3">
-              {{ postagem.temaPostagem.primarioTema }}
-            </p>
-            <p class="card-text">
-              {{ postagem.anexoPostagem }}<small class="text-muted"> </small>
-            </p>
+  <div class="tab-content col-md-8" id="myTabContent">
+    
+    <!--Conteúdo: Todas Postagens-->
+    <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+      
+      <div class="card mb-3 color-light-grey">
+        <div class="card-body">
+          <small>Guilherme postou:</small>
+          <h5 class="card-title d-flex justify-content-center">Fotografia de uma águia</h5>
+          <small>Tema: Pictures</small>
+          <p class="card-text">Descrição da postagem aaaa
+          </p>
+          <p class="card-text"><small class="text-muted">Publicado em</small></p>
+          <!-- <p class="card-text"><small class="text-muted">Postado por: {{item.usuarioCriador.nome}}</small></p> -->
+          <div class="bg-dark">
+          <img src="https://img.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg?size=626&ext=jpg" class="card-img-bottom" alt="...">
+        </div>
+        <hr>
+        </div>
+    </div>
+    
+  </div>
+  <!--Conteúdo: Todas Postagens-->
 
-            <p class="card-text"><small class="text-muted"> </small></p>
-            <button [routerLink]="['/postagem-edit', postagem.id]" class="btn btn-info">Editar</button>
-            <button [routerLink]="['/postagem-delete', postagem.id]" class="btn btn-danger">Excluir</button>
+  <!--Conteúdo: Procurar Postagens-->
+  <div class="tab-pane fade" id="procurarPostagens" role="tabpanel" aria-labelledby="nav-procurarPostagens-tab">
+
+    <div class="card mb-3">
+      <div class="card-body color-light-grey">
+        <h5 class="card-title d-flex justify-content-center"></h5>
+        <p class="card-text"></p>
+        <p class="card-text"><small class="text-muted">Publicado em </small></p>
+        <!-- <p class="card-text"><small class="text-muted">Postado por: {{item.usuarioCriador.nome}}</small></p> -->
+        <!-- <div class="bg-dark">
+        <img src="..." class="card-img-bottom" alt="...">
+      </div> -->
+      </div>
+  </div>
+  </div>
+
+  <!--Conteúdo: Procurar Postagens-->
+
+  <!--Conteúdo: Minhas Postagens-->
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    
+    <div class="card mb-3">
+    <div class="card-body">
+      <div class="row d-flex col-md-12"> 
+      <h5 class="card-title d-flex justify-content-center col-md-11"></h5>
+      <div class="dropdown d-flex col-md-1">
+        <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item text-white">Editar</a>
+          <a class="dropdown-item text-danger">Deletar</a>
+        </div>
+      </div>
+      </div>
+      <small>Tema:</small>
+      <p class="card-text"></p>
+      <p class="card-text"><small class="text-muted">Publicado em</small></p>
+      <!-- <div class="bg-dark">
+      <img src="..." class="card-img-bottom" alt="...">
+    </div> -->
+  </div>
+    </div>
+  </div>
+
+</div>
+<!--Conteúdo: Minhas Postagens-->
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="novaPostagemLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="novaPostagemLabel">Crie sua postagem!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="form-group">
+                <label for="titulo">Tíulo:</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
           </div>
+
+          <div class="form-group">
+            <label for="texto">Texto:</label>
+            <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="tema">Selecione um tema ou <a data-dismiss="modal" routerLink="/tema">crie um novo</a> :</label>
+        <select class="form-control" name="tema" id="tema">
+        </select>
+  </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal">Publicar</button>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <!--Modal-->
 </div>
-<br />
-<button class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
-  TesteCriarPostagem
-</button>
 
-<!-- Inicio modal postagem TESTE -->
-
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Criar nova postagem</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="form">
-          <input
-            name="texto"
-            id="texto"
-            class="form-control"
-            type="text"
-            placeholder="Texto"
-            [(ngModel)]="postagem.textoPostagem"
-          />
-          <input
-            name="privacidade"
-            id="privacidade"
-            class="form-control"
-            type="text"
-            placeholder="Privacidade"
-            [(ngModel)]="postagem.privacidade"
-          />
-          <textarea
-            class="form-control my-3"
-            name="anexo"
-            id="anexo"
-            cols="30"
-            rows="3"
-            placeholder="Anexo"
-            [(ngModel)]="postagem.anexoPostagem"
-          ></textarea>
-          <select
-            [(ngModel)]="idTema"
-            class="form-control"
-            name="Tema"
-            id="Tema"
-          >
-            <option *ngFor="let tema of listaDeTemas" value="{{ tema.id }}">
-              {{ tema.primarioTema }}
-            </option>
-          </select>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-primary" (click)="postPostagem()">
-          Criar postagem
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
