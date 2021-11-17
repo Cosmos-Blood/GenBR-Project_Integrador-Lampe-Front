@@ -6,16 +6,15 @@ import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-cadastrar',
   templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  styleUrls: ['./cadastrar.component.css'],
 })
 export class CadastrarComponent implements OnInit {
-
   usuarioModel: UsuarioModel = new UsuarioModel();
   confirmarSenha: string;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(){
+  ngOnInit() {
     window.scroll(0, 0);
   }
 
@@ -24,16 +23,16 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar() {
-
     if (this.usuarioModel.senhaUsuario != this.confirmarSenha) {
       alert('As senhas estão diferentes');
     } else {
-      this.authService.cadastrar(this.usuarioModel).subscribe((resp: UsuarioModel) => {
-        this.usuarioModel = resp;
-        this.router.navigate(['/entrar']);
-        alert('Usuario cadastrado com sucesso!');
-      });
+      this.authService
+        .cadastrar(this.usuarioModel)
+        .subscribe((resp: UsuarioModel) => {
+          this.usuarioModel = resp;
+          this.router.navigate(['/entrar']);
+          alert('Usuario cadastrado com sucesso!');
+        });
     }
   }
-
 }
