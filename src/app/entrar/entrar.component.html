@@ -1,32 +1,56 @@
 <div class="container-fluid color-brown">
-
   <div class="row d-flex align-items-center">
-      <div class="col-md-6">
-          
-          <div class="row d-flex justify-content-center">
-              <div class="col-md-6">
-                  <h1 class="text-center text-white md-6">Login</h1>
-              
-                  <div class="form-group text-white">
-                      <label for="usuario">Email</label>
-                      <input class="form-control color-brown rounded-pill" type="text" name="usuario" id="usuario" placeholder="Digite seu nome:">
-                  </div>
+    <div class="col-md-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <h1 class="text-center text-white md-6">Login</h1>
 
-                  <div class="form-group text-white">
-                      <label for="senha">Senha</label>
-                      <input class="form-control color-brown rounded-pill" type="password" name="senha" id="senha" placeholder="Digite sua senha:">
-                  </div>
-
-                  <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-lg btn-hover-dark rounded-pill">Login</button>
-                  </div>
-
-                  <hr class="mt-5 mb-5">
-                  <p class="text-center text-white">Não tem possui uma conta? <a class="text-white color-dark-grey rounded-pill p-1" routerLink="/cadastrar">Cadastra-se</a></p>
-              </div>
+          <div class="form-group text-white">
+            <label for="usuario">Email</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="text"
+              name="usuario"
+              id="usuario"
+              placeholder="Digite seu nome:"
+              [(ngModel)]="usuarioLogin.emailUsuario"
+            />
           </div>
+
+          <div class="form-group text-white">
+            <label for="senha">Senha</label>
+            <input
+              class="form-control color-brown rounded-pill"
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Digite sua senha:"
+              [(ngModel)] = "usuarioLogin.senhaUsuario"
+            />
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-lg btn-hover-dark rounded-pill"
+              (click)="entrar()"
+            >
+              Login
+            </button>
+          </div>
+
+          <hr class="mt-5 mb-5" />
+          <p class="text-center text-white">
+            Não tem possui uma conta?
+            <a
+              class="text-white color-dark-grey rounded-pill p-1"
+              routerLink="/cadastrar"
+              >Cadastra-se</a
+            >
+          </p>
+        </div>
       </div>
-      <div class="col-md-6" id="img-bg">
-      </div>
+    </div>
+    <div class="col-md-6" id="img-bg"></div>
   </div>
 </div>

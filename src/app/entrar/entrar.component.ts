@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+console.log("🚀 ~ file: entrar.component.ts ~ line 4 ~ environment", environment)
+console.log("🚀 ~ file: entrar.component.ts ~ line 4 ~ environment", environment)
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 
@@ -26,6 +28,7 @@ export class EntrarComponent implements OnInit {
         environment.token = this.usuarioLogin.token;
         environment.nomeUsuario = this.usuarioLogin.nomeUsuario;
         environment.emailUsuario = this.usuarioLogin.emailUsuario;
+        environment.foto = this.usuarioLogin.foto;
         this.router.navigate(['/sobre']);
       },
       (erro) => {
