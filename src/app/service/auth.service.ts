@@ -9,16 +9,16 @@ import { UsuarioModel } from '../model/UsuarioModel';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {} 
-  token ={
-  headers: new HttpHeaders().set('Authorization', environment.token),
-};
-
-refreshToken() {
-  this.token = {
+  constructor(private http: HttpClient) {}
+  token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
-}
+
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
 
   cadastrar(usuarioModel: UsuarioModel): Observable<UsuarioModel> {
     return this.http.post<UsuarioModel>(
@@ -33,8 +33,19 @@ refreshToken() {
       usuarioLogin
     );
   }
-  getUsuarioById(id: number): Observable<UsuarioModel> {
-    return this.http.get<UsuarioModel>(`https://energylampe.herokuapp.com/api/v1/usuario/${id}`, this.token)
 
+  atualizar(usuario: UsuarioModel): Observable<UsuarioModel> {
+    return this.http.put<UsuarioModel>(
+      'https://energylampe.herokuapp.com/api/v1/usuario/atualizar',
+      usuario,
+      this.token
+    );
+  }
+
+  getUsuarioById(id: number): Observable<UsuarioModel> {
+    return this.http.get<UsuarioModel>(
+      `https://energylampe.herokuapp.com/api/v1/usuario/${id}`,
+      this.token
+    );
   }
 }
