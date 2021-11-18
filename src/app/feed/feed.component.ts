@@ -26,10 +26,12 @@ export class FeedComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
     this.getAllPostagens();
+    this.getAllTemas();
   }
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: PostagemModel[])=>{
       this.listaDePostagens = resp;
+      console.log(this.listaDePostagens)
     })
   }
 
