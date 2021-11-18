@@ -1,4 +1,4 @@
-<div class="container-fluid color-dark-grey p-0">
+<div class="container-fluid color-dark-grey mt-5 py-4 p-0">
 
   <div class="d-flex col-md-10 py-4 p-0" id="postagens">
   
@@ -6,7 +6,7 @@
 
     
       <!--NavsTabs-->
-    <ul class="nav nav-tabs bg-dark rounded position-fixed col-md-2 d-flex justify-content-center p-2" id="myTab" role="tablist">
+    <ul class="nav nav-tabs bg-dark rounded col-md-10 d-flex justify-content-center p-2 sticky" id="myTab" role="tablist">
   
       <!--Todas Postagens-->
     <li class="nav-item col-md-12 pl-0 mt-3" role="presentation">
@@ -17,7 +17,7 @@
     
     <!--Procurar Postagens-->
     <li class="nav-item pl-0 col-md-12 mt-3" role="presentation">
-      <a class="nav-link rounded-pill color-light-grey" id="nav-procurarPostagens-tab" data-toggle="tab" href="#procurarPostagens" role="tab" aria-controls="procurarPostagens" aria-selected="false">Procurar Postagens</a>
+      <a (click)="getAllTemas()" class="nav-link rounded-pill color-light-grey" id="nav-procurarPostagens-tab" data-toggle="tab" href="#procurarPostagens" role="tab" aria-controls="procurarPostagens" aria-selected="false">Procurar Postagens</a>
     </li>
     <!--Procurar Postagens-->
     
@@ -38,8 +38,8 @@
       <div class="card mb-3 color-light-grey">
         <div *ngFor='let item of listaDePostagens' class="card-body">
           <small>Publicado por {{item.usuarioPostagem.nomeUsuario}}</small>
-          <h5 class="card-title d-flex justify-content-center">Fotografia de uma águia</h5>
-          <small>{{item.temaPostagem.primarioTema}}</small>
+          <h5 class="card-title d-flex justify-content-center">{{item.titulo}}</h5>
+          <small>Tema: {{item.temaPostagem.primarioTema}}</small>
           <small>{{item.temaPostagem.secundarioTema}}</small>
           <p class="card-text">{{item.textoPostagem}}
           </p>
@@ -59,19 +59,22 @@
 
     <div *ngFor='let tema of listaDeTemas' class="card mb-3">
       <div *ngFor='let item of tema.postagens' class="card-body color-light-grey">
-        <p class="card-text"><small class="text-muted">Publicado por {{item.usuarioPostagem.nomeUsuario}}</small></p>
-        <h5 class="card-title d-flex justify-content-center">Falta o títulooooo</h5>
+        <small>Publicado por {{item.usuarioPostagem.nomeUsuario}}</small>
+        <h5 class="card-title d-flex justify-content-center">{{item.titulo}}</h5>
+        <small>Tema: {{tema.primarioTema}}</small>
         <p class="card-text">{{item.textoPostagem}}</p>
         <div class="bg-dark">
           <img src="{{item.anexoPostagem}}" class="card-img-bottom">
-          </div>
+        </div>
+        <p class="card-text"><small class="text-muted">Publicado como: {{item.privacidade}}</small></p>
           <!-- <p class="card-text"><small class="text-muted">Publicado em </small></p> -->
+          <hr>
         </div>
       </div>
     </div>
     
+    <!--Conteúdo: Procurar Postagens-->
   </div>
-  <!--Conteúdo: Procurar Postagens-->
   
   <!-- Modal -->
   <div
@@ -96,22 +99,35 @@
       </div>
       <div class="modal-body">
         <form action="form">
+
+          <input
+          name="titulo"
+          id="titulo"
+          class="form-control mb-4"
+          type="text"
+          placeholder="titulo"
+          [(ngModel)]="postagem.titulo"
+        />
+
           <input
             name="texto"
             id="texto"
-            class="form-control"
+            class="form-control mb-2"
             type="text"
             placeholder="Texto"
             [(ngModel)]="postagem.textoPostagem"
           />
-          <input
-            name="privacidade"
-            id="privacidade"
-            class="form-control"
-            type="text"
-            placeholder="Privacidade"
-            [(ngModel)]="postagem.privacidade"
-          />
+          <div>
+            <input [(ngModel)]="postagem.privacidade" type="radio" id="publico" name="drone" value="publico"
+                   checked>
+            <label for="publico">Público</label>
+          </div>
+          
+          <div>
+            <input [(ngModel)]="postagem.privacidade" type="radio" id="privado" name="drone" value="privado">
+            <label for="privado">Privado</label>
+          </div>
+          
           <textarea
             class="form-control my-3"
             name="anexo"
@@ -123,6 +139,7 @@
           ></textarea>
           <select
             [(ngModel)]="idTema"
+            (change)='findByIdTema()'
             class="form-control"
             name="Tema"
             id="Tema"
@@ -137,7 +154,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary" (click)="postPostagem()">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="postPostagem()">
           Criar postagem
         </button>
       </div>

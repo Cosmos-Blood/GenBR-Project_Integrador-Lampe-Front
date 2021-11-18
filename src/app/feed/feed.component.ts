@@ -27,11 +27,19 @@ export class FeedComponent implements OnInit {
     window.scroll(0,0)
     this.getAllPostagens();
     this.getAllTemas();
+
+    this.temaService.refreshToken()
+    this.postagemService.refreshToken()
+    this.auth.refreshToken()
   }
   getAllPostagens(){
-    this.postagemService.getAllPostagens().subscribe((resp: PostagemModel[])=>{
-      this.listaDePostagens = resp;
-      console.log(this.listaDePostagens)
+    this.postagemService.getAllPostagens().subscribe((resp: PostagemModel[]) => {
+      this.listaDePostagens = resp
+    })
+  }
+  findByIdTema(){
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: TemaModel) =>{
+      this.tema = resp
     })
   }
 
@@ -52,8 +60,8 @@ export class FeedComponent implements OnInit {
      this.postagem.usuarioPostagem = this.usuario
      this.postagemService.postPostagem(this.postagem).subscribe((resp: PostagemModel)=>{
        this.postagem = resp
+       this.getAllPostagens()
        alert("Postagem efetuada!")
-       this.postagemService.getAllPostagens()
      })
    }
 }

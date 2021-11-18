@@ -3,6 +3,7 @@ import { UsuarioModel } from "./UsuarioModel";
 
 export class PostagemModel{
     public id: number;
+    public titulo: string;
     public textoPostagem: string;
     public anexoPostagem: string;
     public localizacaoPostagem:string;
