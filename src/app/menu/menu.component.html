@@ -1,100 +1,206 @@
 <!-- NavBar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-info navbar-color">
+<nav class="navbar navbar-expand-lg cor-navbar fixed-top fancy-link::after">
 
-    <!-- Nome do projeto -->
-      <a class="navbar-brand text-warning font-weight-bold mb-1"  style="font-size: 25px" routerLink="feed"><em>Lampe</em></a>
-    <!-- /Nome do projeto -->
+  <!-- Nome do projeto -->
+    <a class="navbar-brand text-warning font-weight-bold mb-1 "  style="font-size: 25px" href="#"><em>Lampe</em></a>
+  <!-- /Nome do projeto -->
 
-    <!-- Botão do menu-->
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <!-- /Botão do menu-->
+  <!-- Botão do menu-->
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <!-- /Botão do menu-->
 
-    <!-- Logo -->
-    <!-- /Logo -->
+  <!-- Opções de Início -->
+    <!--<div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
 
-    <!-- Opçõs do Menu -->
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#inicio"> Início <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#alampe"> A Lampe <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#ods7"> ODS 7 <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#tecnologias"> Tecnologias <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#equipe"> Equipe <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#parceiros"> Parceiros <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#contato"> Contato <span class="sr-only">(current)</span></a>
+          </li>
+
+      </ul>
+
+    </div>-->
+<!-- /Opções de Início -->
+
+
+
+
+
+
+
+
+<!-- WILLIAM - NGIF -->
+
+  <!-- Opções do feed | Aqui iremos usar o recurso de *ngIf, segue exemplo abaixo:
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
+              <div *ngIf='auth.btnLogin()'>
+                  <li class="nav-item">
+                      <a class="nav-link active text-warnin font-weight-bold"style="font-size: 20px" href="#feed"> Feed <span class="sr-only">(current)</span></a>
+                  </li>
+              </div>
+  -->
+
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
+
+          <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
 
             <li class="nav-item">
-              <a class="nav-link active text-warning font-weight-bold" style="font-size: 20px" href="#inicio"> Início <span class="sr-only">(current)</span></a>
+              <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#feed"> Feed <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-warning font-weight-bold" style="font-size: 20px" href="#historia"> História <span class="sr-only">(current)</span></a>
+              <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#eventos"> Eventos <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-warning font-weight-bold" style="font-size: 20px" href="#tecnologias"> Tecnologias <span class="sr-only">(current)</span></a>
+              <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#perfil"> Perfil <span class="sr-only">(current)</span></a>
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link active text-warning font-weight-bold" style="font-size: 20px" href="#equipe"> Equipe <span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active text-warning font-weight-bold" style="font-size: 20px" href="#contato" routerLink="#"> Contato <span class="sr-only">(current)</span></a>
-            </li>
-
         </ul>
-    <!-- Opçõs do Menu -->
-
-        <!-- O trecho abaixo se refere ao icone com a foto do usuário, o mesmo não está funcional -->
-        <!--<li class="nav-item active">
-              <img src="{{foto}}"
-                  alt=""
-                  width="50px"
-                  height="50px"
-                  class="img-fluid rounded-circle">
-            </li>
-
-        <!-- O trecho abaixo se refere ao nome do usuário, o mesmo não está funcional -->
-        <!-- <li class="nav-item pl-3">
-                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}/p>
-            </li>-->
-
-        <!-- O trecho abaixo, refere-se ao routerlik, que puxa o usuário, junto do icone de sua foto e nome. O mesmo não está funcional -->
-        <!--<li class="nav-item pl-3">
-              <a [routerLink]="['/user-edit', id]">
-                <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
-              </a>
-            </li>-->
-      <!-- <div> -->
-
-      <!-- <li class="nav-item"> -->
-        <!-- Os router link destas classes, não estão de acordo com a forma de routerlink do blog -->
-        <!-- O feed, deveria estar disponível na tela inicial? -->
-        <!-- <a class="text-light font-weight-bold" routerLink="/feed">Feed</a> -->
-      <!-- </li> -->
-      <!-- </div> -->
-
-      <!-- Botões de Entrar e Cadastrar, respectivamente -->
-          <form class="form-inline my-2 my-lg-0 col-md-1">
-            <button class="btn btn-outline-light bg-info text-warning font-weight-bold rounded-pill" type="submit" routerLink="/entrar" href="#/entrar">Entrar</button>
-          </form>
-
-          <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0 bg-info text-warning font-weight-bold rounded-pill" type="submit" routerLink="/cadastrar" >Cadastrar</button>
-          </form>
-      <!-- /Botões de Entrar e Cadastrar, respectivamente -->
-
-      <!-- O trecho abaixo, refere-se ao icone de sair, o mesmo não está funcional -->
-      <!--<ul class="navbar-nav ml-auto d-flex align-itens-center">
-            <li class="nav-item pl-3">
-              <a (click)= "sair"
-                class="m-0 font-weight-bold text-white fs-16">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-            </li>
-          </ul>-->
-  <!-- </div> -->
-
       </div>
-  </nav>
+  <!-- /Opções do feed -->
+
+<!-- /WILLIAM - NGIF -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- WILLIAM - NGIF -->
+
+      <!-- O trecho abaixo se refere ao icone com a foto do usuário, o mesmo não está funcional -->
+      <!--<li class="nav-item active">
+            <img src="{{foto}}"
+                alt=""
+                width="50px"
+                height="50px"
+                class="img-fluid rounded-circle">
+          </li>
+
+      <!-- O trecho abaixo se refere ao nome do usuário, o mesmo não está funcional -->
+      <!-- <li class="nav-item pl-3">
+              <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}/p>
+          </li>-->
+
+      <!-- O trecho abaixo, refere-se ao routerlik, que puxa o usuário, junto do icone de sua foto e nome. O mesmo não está funcional -->
+      <!--<li class="nav-item pl-3">
+            <a [routerLink]="['/user-edit', id]">
+              <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+            </a>
+          </li>-->
+
+<!-- /WILLIAM - NGIF -->
+
+
+
+
+    <!-- Botões de Entrar e Cadastrar, respectivamente -->
+        <!--<div>
+          <form class="form-inline my-2 my-lg-0 col-md-1">
+            <button class="btn btn-outline-light text-warning font-weight-bold rounded-pill" type="submit" routerLink="/entrar" href="#/entrar">Entrar</button>
+          </form>
+        </div>
+        <div>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-light text-warning font-weight-bold rounded-pill" type="submit" routerLink="/cadastrar" >Cadastrar</button>
+          </form>
+        </div>-->
+    <!-- /Botões de Entrar e Cadastrar, respectivamente -->
+
+
+
+
+
+
+
+
+
+
+<!-- WILLIAM - NGIF -->
+
+    <!-- Dropdown para Sair e Configurações, respectivamente  | Aqui também iremos usar o recurso de *ngIf -->
+
+          <div class="dropdown btn btn-outline-light font-weight-bold rounded-pill mr-5">
+            <a class="text-warning  dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">Usuário
+            </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item font-weight-bold text-dark" href="#">Sair</a>
+            <a class="dropdown-item font-weight-bold text-dark" href="#">Configurações</a>
+          </div>
+        </div>
+    <!-- /Dropdown para Sair e Configurações, respectivamente -->
+
+<!-- /WILLIAM - NGIF -->
+
+
+
+
+
+
+
+
+
+
+<!-- WILLIAM - NGIF -->
+
+    <!-- O trecho abaixo, refere-se ao icone de sair, o mesmo não está funcional -->
+    <!--<ul class="navbar-nav ml-auto d-flex align-itens-center">
+          <li class="nav-item pl-3">
+            <a (click)= "sair"
+              class="m-0 font-weight-bold text-white fs-16">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          </li>
+        </ul>-->
+<!-- </div> -->
+
+</nav>
+
+<!-- /WILLIAM - NGIF -->
+
 <!-- NavBar -->
