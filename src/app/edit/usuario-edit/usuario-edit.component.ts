@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioModel } from 'src/app/model/UsuarioModel';
+import { RodapeComponent } from 'src/app/rodape/rodape.component';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
