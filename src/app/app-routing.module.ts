@@ -6,10 +6,8 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
-import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
-  {path:"sobre",component: SobreComponent},
   {path:"entrar",component: EntrarComponent},
   {path: "cadastrar", component: CadastrarComponent},
   {path: "feed", component: FeedComponent},

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { UsuarioLogin } from '../model/UsuarioLogin';
@@ -9,7 +10,7 @@ import { UsuarioModel } from '../model/UsuarioModel';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
@@ -47,5 +48,14 @@ export class AuthService {
       `https://energylampe.herokuapp.com/api/v1/usuario/${id}`,
       this.token
     );
+  }
+
+  logado() {
+    let ok: boolean = false;
+
+    if (environment.token != '') {
+      ok = true;
+    }
+    return ok;
   }
 }

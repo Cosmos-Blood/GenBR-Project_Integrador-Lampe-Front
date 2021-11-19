@@ -63,23 +63,24 @@
 
 <!-- WILLIAM - NGIF -->
 
-  <!-- Opções do feed | Aqui iremos usar o recurso de *ngIf, segue exemplo abaixo:
+  <!-- Opções do feed | Aqui iremos usar o recurso de *ngIf, segue exemplo abaixo: -->
 
-        <div class="collapse navbar-collapse">
+        <!-- <div class="collapse navbar-collapse" *ngIf='auth.logado()'>
           <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
-              <div *ngIf='auth.btnLogin()'>
+              <div>
                   <li class="nav-item">
                       <a class="nav-link active text-warnin font-weight-bold"style="font-size: 20px" href="#feed"> Feed <span class="sr-only">(current)</span></a>
                   </li>
               </div>
-  -->
+            </ul>
+        </div> -->
+  
 
-      <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" *ngIf='auth.logado()' >
 
           <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
-
             <li class="nav-item">
-              <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" href="#feed"> Feed <span class="sr-only">(current)</span></a>
+              <a class="nav-link active text-warning font-weight-bold fancy-link" style="font-size: 20px" routerLink="feed"> Feed <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
@@ -109,13 +110,18 @@
 <!-- WILLIAM - NGIF -->
 
       <!-- O trecho abaixo se refere ao icone com a foto do usuário, o mesmo não está funcional -->
-      <!--<li class="nav-item active">
-            <img src="{{foto}}"
-                alt=""
-                width="50px"
-                height="50px"
-                class="img-fluid rounded-circle">
-          </li>
+      
+      <div>
+        <li class="d-flex nav-item active list-group mr-3">
+          <img class="img-circle" src="{{imgUsuario}}"
+              alt=""
+              width="50px"
+              height="50px"
+              class="rounded-circle"
+              >
+        </li>
+      </div>
+
 
       <!-- O trecho abaixo se refere ao nome do usuário, o mesmo não está funcional -->
       <!-- <li class="nav-item pl-3">
@@ -127,7 +133,7 @@
             <a [routerLink]="['/user-edit', id]">
               <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
             </a>
-          </li>-->
+          </li>
 
 <!-- /WILLIAM - NGIF -->
 
@@ -160,7 +166,7 @@
 
     <!-- Dropdown para Sair e Configurações, respectivamente  | Aqui também iremos usar o recurso de *ngIf -->
 
-          <div class="dropdown btn btn-outline-light font-weight-bold rounded-pill mr-5">
+          <div class="dropdown btn btn-outline-light font-weight-bold rounded-pill mr-5" *ngIf='auth.logado()'>
             <a class="text-warning  dropdown-toggle"
                 href="#"
                 role="button"
@@ -172,7 +178,7 @@
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item font-weight-bold text-dark" href="#">Sair</a>
-            <a class="dropdown-item font-weight-bold text-dark" href="#">Configurações</a>
+            <a class="dropdown-item font-weight-bold text-dark" routerLink="usuario-edit">Configurações</a>
           </div>
         </div>
     <!-- /Dropdown para Sair e Configurações, respectivamente -->

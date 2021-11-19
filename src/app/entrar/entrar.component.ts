@@ -29,7 +29,7 @@ export class EntrarComponent implements OnInit {
         environment.nomeUsuario = this.usuarioLogin.nomeUsuario;
         environment.emailUsuario = this.usuarioLogin.emailUsuario;
         environment.foto = this.usuarioLogin.foto;
-        this.router.navigate(['/sobre']);
+        this.router.navigate(['/feed']);
       },
       (erro) => {
         if (erro.status == 400) {
