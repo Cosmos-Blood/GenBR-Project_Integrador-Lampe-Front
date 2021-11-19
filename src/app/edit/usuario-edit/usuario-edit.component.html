@@ -1,38 +1,40 @@
-<div class="container-fluid color-dark-brown p-3 vh-100">
+<div class="container-fluid vh-100">
+
   <div class="row vh-100">
-    <!-- Canto esquerdo -->
+
+    <div id="image-backgroud" class="col-md-5 color-dark-brown  d-flex justify-content-center align-items-center flex-column">
+
+      <img class="rounded-circle" width="200px" height="200px" src="{{usuario.foto}}" alt="">
+      <div><p class="text-white fs-56 ">{{usuario.nomeUsuario}}</p></div>
+    </div>
+
     <div
       class="
-        col-md-6
-        container-fluid
-        row
-        justify-content-center
-        flex-column
-        align-items-center
+      col-md-7
+      color-brown
+      d-flex
+      align-items-center
+      justify-content-center
       "
     >
+
+    <div class="row d-flex justify-content-center vw-100">
+      <div class="col-md-10">
+        <h1 class="text-center fs-56 text-white">Atualizar cadastro</h1>
       <div>
-        <img src="https://i.imgur.com/ulcJRmb.png" alt="" width="300px" />
-      </div>
-      <div>
-        <h3 class="text-white mr-3">Lampe</h3>
-      </div>
-    </div>
-    <!-- Canto direito -->
-    <div class="col-md-6">
-      <div
-        class="row d-flex justify-content-center flex-column align-items-center"
-      >
-        <h1 class="text-center text-white">Atualizar cadastro</h1>
-        <form class="col-md-8 form-group">
+        <div class="form-group text-white m-1">
           <label for="nome">Alterar nome:</label>
           <input
-            name="nome"
-            type="text"
-            class="form-control rounded-pill color-brown"
-            id="nome"
-            [(ngModel)]="usuario.nomeUsuario"
+          class="form-control color-brown rounded-pill"
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Digite seu nome:"
+        [(ngModel)]="usuario.nomeUsuario"
           />
+        </div>
+
+          <div class="form-group text-white m-1">
           <label for="email"> Digite seu novo email:</label>
           <input
             name="email"
@@ -41,6 +43,9 @@
             id="email"
             [(ngModel)]="usuario.emailUsuario"
           />
+        </div>
+
+        <div class="form-group text-white m-1">
           <label for="foto">Alterar foto:</label>
           <input
             name="foto"
@@ -49,6 +54,9 @@
             id="foto"
             [(ngModel)]="usuario.foto"
           />
+        </div>
+
+        <div class="form-group text-white m-1">
           <label for="senha">Digite sua nova senha:</label>
           <input
             name="senha"
@@ -57,6 +65,9 @@
             id="senha"
             (input)="confirmSenha($event)"
           />
+        </div>
+
+          <div class="form-group text-white m-1">
           <label for="confirmarSenha">Confirmar senha:</label>
           <input
             name="confirmarSenha"
@@ -65,6 +76,8 @@
             id="confirmarSenha"
             [(ngModel)]="usuario.senhaUsuario"
           />
+        </div>
+
           <!-- <label for="tipo">Alterar tipo de usuario:</label>
                   <div>
                     <select class="form-control color-brown rounded-pill text-white" name="tipo" id="tipo">
@@ -86,11 +99,12 @@
               class="btn ml-4 btn-lg rounded-pill btn-hover-dark"
               (click)="atualizar()"
             >
-              Cadastrar
+              Atualizar
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
+

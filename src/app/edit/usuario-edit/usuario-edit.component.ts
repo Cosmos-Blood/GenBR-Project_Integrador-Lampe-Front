@@ -36,8 +36,9 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar() {
     this.usuario.id = this.usuarioId;
+    console.log(this.usuario);
     this.auth.atualizar(this.usuario).subscribe(() => {
-      alert('Usuario atualizado!, faça login novamente');
+      alert('Usuário atualizado! Faça login novamente');
       environment.id = 0;
       environment.nomeUsuario = '';
       environment.emailUsuario = '';

@@ -9,8 +9,8 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  imgUsuario: string = "https://i.imgur.com/Mbq0YYy.jpg"
-  
+  imgUsuario: string = environment.foto;
+
   constructor(public auth: AuthService) { }
 
   ngOnInit(){
