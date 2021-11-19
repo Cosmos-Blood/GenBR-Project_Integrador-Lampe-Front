@@ -15,10 +15,14 @@ export class UsuarioEditComponent implements OnInit {
   confirmarSenha: string;
   usuarioId = environment.id;
 
-  constructor(private auth: AuthService, private route: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
     window.scroll(0, 0);
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
+    }
+
     this.auth.refreshToken();
     this.getUsuarioById();
   }
@@ -45,7 +49,7 @@ export class UsuarioEditComponent implements OnInit {
       environment.foto = '';
       environment.senhaUsuario = '';
       environment.token = '';
-      this.route.navigate(['/entrar']);
+      this.router.navigate(['/entrar']);
     });
   }
 }
