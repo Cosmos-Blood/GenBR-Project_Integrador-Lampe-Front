@@ -10,18 +10,20 @@ import { FeedComponent } from './feed/feed.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
-  {path:"entrar",component: EntrarComponent},
-  {path: "cadastrar", component: CadastrarComponent},
-  {path: "feed", component: FeedComponent},
-  {path: "usuario-edit", component: UsuarioEditComponent},
-  {path: "postagem-edit/:id", component: PostagemEditComponent},
-  {path: "postagem-delete/:id", component: PostagemDeleteComponent},
-  {path: "eventos", component: EventosComponent},
-  {path:"perfil", component: PerfilComponent}
+  { path: '', redirectTo: 'entrar', pathMatch: 'full' },
+  { path: "entrar", component: EntrarComponent },
+  { path: "cadastrar", component: CadastrarComponent },
+  { path: "feed", component: FeedComponent },
+  { path: "usuario-edit", component: UsuarioEditComponent },
+  { path: "postagem-edit/:id", component: PostagemEditComponent },
+  { path: "postagem-delete/:id", component: PostagemDeleteComponent },
+  { path: "eventos", component: EventosComponent },
+  { path: "perfil", component: PerfilComponent }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
- })
+})
 export class AppRoutingModule { }

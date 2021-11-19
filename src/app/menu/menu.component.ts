@@ -17,4 +17,14 @@ export class MenuComponent implements OnInit {
     window.scroll(0,0)
     this.auth.refreshToken()
   }
+
+  sair(){
+    environment.token = ""
+    environment.senhaUsuario = ""
+    environment.id = 0
+    environment.foto = ""
+    environment.nomeUsuario = ""
+    environment.emailUsuario = ""
+  }
+
 }
