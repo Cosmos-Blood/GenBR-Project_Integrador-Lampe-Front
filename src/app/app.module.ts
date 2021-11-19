@@ -13,6 +13,8 @@ import { FeedComponent } from './feed/feed.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { EventosComponent } from './eventos/eventos.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     FeedComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
+    PerfilComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
