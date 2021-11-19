@@ -1,1 +1,46 @@
-<p>perfil works!</p>
+<div class="container-fluid color-dark-grey">
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-7 color-light-grey mt-5 rounded pt-5">
+
+            <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+              
+              <!--Minhas Postagens-->
+              <li class="nav-item bg-white" role="presentation">
+                <a (click)='findByIdUser()' class="nav-link text-white" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Minhas Postagens</a>
+              </li>
+              <!--Minhas Postagens-->
+              
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    
+                    <div class="card mb-3">
+                    <div *ngFor='let item of usuario.postagens' class="card-body">
+                      <div class="row d-flex col-md-12"> 
+                      <h5 class="card-title d-flex justify-content-center col-md-11">Titulo{{item.titulo}}</h5>
+                      <!-- <div class="dropdown d-flex col-md-1">
+                        <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item text-white">Editar</a>
+                          <a class="dropdown-item text-danger">Deletar</a>
+                        </div>
+                      </div> -->
+                      </div>
+                      <small>Tema: {{item.temaPostagem.primarioTema}}</small>
+                      <p class="card-text">texto{{item.textoPostagem}}</p>
+                      <img src="{{item.anexoPostagem}}" class="card-img-bottom">
+                          <p class="card-text"><small class="text-muted">Publicado como: {{item.privacidade}}</small></p>
+                          <hr>
+                  </div>
+                    </div>
+                  </div>
+                
+                </div>
+        </div>
+    </div>
+</div>
