@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class RodapeComponent implements OnInit {
   constructor(public router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   isOkRoute(){

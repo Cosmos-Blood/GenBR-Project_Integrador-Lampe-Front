@@ -7,3 +7,23 @@
 .bg-clara{
     background-color: #DEDEDE;
 }
+.bg-marrom{
+    background-color: #4A2316;
+}
+.bg-preto{
+    background-color: #000000;
+}
+.bg-cinza{
+    background-color: #211F1F;
+}
+#grad {
+    background-image: linear-gradient(to bottom right, #242424
+    , #121214
+    );
+ }
+ .border-all {
+    border-radius: 20px;
+  }
+  
+
+  
