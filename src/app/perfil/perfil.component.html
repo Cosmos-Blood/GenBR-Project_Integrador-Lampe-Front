@@ -56,7 +56,7 @@
 
             <div class="dropdown-menu bg-amarelo" aria-labelledby="dropdownMenuLink">
               <a [routerLink]="['/postagem-edit', item.id]" class="dropdown-item text-dark font-weight-bold">Editar</a>
-              <a class="dropdown-item text-danger font-weight-bold" href="#">Deletar</a>
+              <a [routerLink]="['/postagem-delete', item.id]" class="dropdown-item text-danger font-weight-bold" href="#">Deletar</a>
             </div>
           </div>
         </div>
