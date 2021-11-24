@@ -1,41 +1,84 @@
-<div class="modal-body">
-  <form action="form">
-    <input
-      name="texto"
-      id="texto"
-      class="form-control"
-      type="text"
-      placeholder="postagem.textoPostagem"
-      [(ngModel)]="postagem.textoPostagem"
-    />
-    <input
-      name="privacidade"
-      id="privacidade"
-      class="form-control"
-      type="text"
-      placeholder="Privacidade"
-      [(ngModel)]="postagem.privacidade"
-    />
-    <textarea
-      class="form-control my-3"
-      name="anexo"
-      id="anexo"
-      cols="30"
-      rows="3"
-      placeholder="Anexo"
-      [(ngModel)]="postagem.anexoPostagem"
-    ></textarea>
-    <select
-      [(ngModel)]="idTema"
-      (change)="getByIdTema()"
-      class="form-control"
-      name="Tema"
-      id="Tema"
+<div class="container-fluid pt-5 vh-100" id="grad">
+
+  <div class="row d-flex justify-content-around pt-5 p-0">
+
+    <div class="col-md-5 color-dark borda flex-column justify-content-center align-items-center py-3">
+      <div class="col-md-12 text-white">
+        <h3>Você realmente deseja atualizar essa postagem?</h3>
+
+      </div>
+
+      <div class="modal-body">
+        <form action="form">
+
+          <label class="text-white">Texto:</label>
+          <textarea  class="form-control mb-3"  name="texto"  id="texto" cols="30" rows="3"
+          placeholder="Digite seu texto" [(ngModel)]="postagem.textoPostagem" ></textarea>
+
+          <label class="text-white">Anexo:</label>
+          <input name="anexo" id="anexo" class="form-control mb-3" type="text" 
+          placeholder="Insira o link do anexo" [(ngModel)]="postagem.anexoPostagem"/>
+          
+          <label class="text-white">Tema:</label>
+            <select [(ngModel)]="idTema" (change)="getByIdTema()" class="form-control mb-3"  name="Tema" id="Tema">
+            
+              <option *ngFor="let tema of listaDeTemas" value="{{ tema.id }}">
+                {{ tema.primarioTema }}</option>
+              </select>
+
+        </form>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-12 d-flex justify-content-end p-3">
+          <button routerLink="/perfil" class="btn btn-lg btn-danger rounded-pill mr-5">Cancelar</button>
+          <button (click)="atualizar()" class="btn btn-lg btn-info rounded-pill mr-3">Atualizar</button>
+        </div>
+      </div>
+      
+
+
+    </div>
+
+    <div class="col-md-6 color-dark borda py-3">
+      <div class="col-md-12 text-white">
+        <h3>Exemplo de postagem:</h3>
+
+      </div>
+
+      
+<div class="col-md-12">
+  <div class="row">
+
+    <div
+      class="col-md-10 color-brown rounded p-3 ml-5"
     >
-      <option *ngFor="let tema of listaDeTemas" value="{{ tema.id }}">
-        {{ tema.primarioTema }}
-      </option>
-    </select>
-    <button class="btn btn-dark" (click)="atualizar()">Atualizar</button>
-  </form>
+      <div class="d-flex w-100 justify-content-center mb-3">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+        </div>
+        <div class="bg-light rounded mx-3 w-100 flex-column">
+          <p class="p-1">Seu texto aparecerá aqui
+          </p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <div class="col-md-10 d-flex align-items-start mr-5">
+          <small class="text-white font-weight-bold">Tema: escolhido por você</small>
+        </div>
+        <img
+          src="https://d346xxcyottdqx.cloudfront.net/wp-content/uploads/2016/02/renewable_energy_sources-e1551858601606.jpg"
+          alt=""
+          width="450px"
+          height="350px"
+          class="rounded bg-marrom p-2"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
 </div>

@@ -7,6 +7,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { EntrarComponent } from './entrar/entrar.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { FeedComponent } from './feed/feed.component';
+import { InicioComponent } from './inicio/inicio.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "postagem-edit/:id", component: PostagemEditComponent },
   { path: "postagem-delete/:id", component: PostagemDeleteComponent },
   { path: "eventos", component: EventosComponent },
-  { path: "perfil", component: PerfilComponent }
+  { path: "perfil", component: PerfilComponent },
+  { path: "inicio", component: InicioComponent}
 
 ];
 

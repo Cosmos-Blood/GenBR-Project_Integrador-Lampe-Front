@@ -1,0 +1,19 @@
+#grad {
+    background-image: linear-gradient(to bottom right, #262525, #121214, #121214);
+  }
+.borda {
+    border-radius: 20px;
+    }
+    
+.color-dark {
+    background-color: #131515;
+}
+
+.color-brown {
+    background-color: #4a2316;
+}
+
+.btn-yellow {
+    background-color: #f4c430;
+    font-weight: bold;
+}

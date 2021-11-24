@@ -1,0 +1,11 @@
+#grad {
+  background-image: linear-gradient(to bottom right, #262525, #121214, #121214);
+}
+
+.color-brown {
+  background-color: #4a2316;
+}
+
+.borda {
+  border-radius: 20px;
+  }

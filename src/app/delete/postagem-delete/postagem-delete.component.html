@@ -1,1 +1,15 @@
-<button class="btn btn-danger" (click)="deletePostagemById()">Excluir</button>
+<div class="container-fluid py-5 vh-100" id="grad">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10 text-center color-brown borda p-5 mt-5">
+
+            <div><h2 class="mt-2 text-white">Você tem certeza que deseja <span style="margin-inline: 20px; color: red;"> excluir </span>  essa postagem? </h2></div>
+            
+            <div class="row col-md-12 d-flex justify-content-center mt-5">
+                <button routerLink="/perfil" class="btn btn-danger rounded-pill mr-5">Cancelar</button>
+                <button class="btn btn-success rounded-pill" (click)="deletePostagemById()">Deletar</button></div>
+            
+        </div>
+    </div>
+</div>
+
