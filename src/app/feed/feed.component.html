@@ -42,14 +42,22 @@
                 class="fa fa-plus-square fs-icon text-white mr-2"
                 aria-hidden="true"
               ></i>
-              <button class="btn btn-orange mb-2">Nova postagem</button>
+              <button
+                class="btn btn-orange mb-2"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Nova postagem
+              </button>
             </div>
             <div class="d-flex">
               <i
                 class="fa fa-arrow-up fs-icon text-white mr-2"
                 aria-hidden="true"
               ></i>
-              <button class="btn btn-orange mb-2" (click)="voltarAoTopo()">Subir</button>
+              <button class="btn btn-orange mb-2" (click)="voltarAoTopo()">
+                Subir
+              </button>
             </div>
           </div>
         </div>
@@ -60,7 +68,9 @@
     <div class="col-md-8 d-flex justify-content-center my-5">
       <div class="row d-flex">
         <div class="w-75 ml-5 mb-2">
-          <button class="btn btn-orange rounded-pill" id="energia">Energia</button>
+          <button class="btn btn-orange rounded-pill" id="energia">
+            Energia
+          </button>
         </div>
 
         <div
@@ -68,7 +78,14 @@
           *ngFor="let item of listaDePostagens"
         >
           <div class="d-flex w-100 justify-content-center mb-3">
-            <div class="d-flex flex-column justify-content-center align-items-center">
+            <div
+              class="
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
               <img
                 src="{{ item.usuarioPostagem.foto }}"
                 alt=""
@@ -77,7 +94,9 @@
                 class="rounded-circle bg-dark p-1"
               />
               <div>
-                <p class="font-weight-bold text-white">{{item.usuarioPostagem.nomeUsuario}}</p>
+                <p class="font-weight-bold text-white">
+                  {{ item.usuarioPostagem.nomeUsuario }}
+                </p>
               </div>
             </div>
             <div class="bg-light rounded mx-3 w-100 flex-column">
@@ -86,9 +105,13 @@
               </p>
             </div>
           </div>
-          <div class="d-flex justify-content-center flex-column align-items-center">
+          <div
+            class="d-flex justify-content-center flex-column align-items-center"
+          >
             <div class="col-md-10 d-flex align-items-start ml-3">
-              <small class="text-white font-weight-bold">Tema: {{item.temaPostagem.primarioTema}}</small>
+              <small class="text-white font-weight-bold"
+                >Tema: {{ item.temaPostagem.primarioTema }}</small
+              >
             </div>
             <img
               src="{{ item.anexoPostagem }}"
@@ -99,6 +122,78 @@
             />
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Criar nova postagem</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="form">
+
+          <textarea
+            name="texto"
+            id="texto"
+            class="form-control mb-2"
+            type="text"
+            placeholder="Texto"
+            [(ngModel)]="postagem.textoPostagem"
+          ></textarea>
+
+          <input
+            class="form-control my-3"
+            name="anexo"
+            id="anexo"
+            cols="30"
+            rows="3"
+            placeholder="Anexo"
+            [(ngModel)]="postagem.anexoPostagem"
+          />
+
+          <select
+            [(ngModel)]="idTema"
+            (change)="findByIdTema()"
+            class="form-control"
+            name="Tema"
+            id="Tema"
+          >
+            <option *ngFor="let tema of listaDeTemas" value="{{ tema.id }}">
+              {{ tema.primarioTema }}
+            </option>
+          </select>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-dismiss="modal"
+          (click)="postPostagem()"
+        >
+          Criar postagem
+        </button>
       </div>
     </div>
   </div>

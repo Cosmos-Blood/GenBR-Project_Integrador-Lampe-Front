@@ -75,11 +75,13 @@ export class FeedComponent implements OnInit {
     this.postagem.temaPostagem = this.tema;
     this.usuario.id = this.idUsuario;
     this.postagem.usuarioPostagem = this.usuario;
+    this.postagem.privacidade = "Publico"
     this.postagemService
       .postPostagem(this.postagem)
       .subscribe((resp: PostagemModel) => {
         this.postagem = resp;
         this.getAllPostagens();
+        this.postagem = new PostagemModel()
         alert('Postagem efetuada!');
       });
   }

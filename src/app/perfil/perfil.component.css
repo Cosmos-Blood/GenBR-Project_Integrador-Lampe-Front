@@ -1,23 +1,25 @@
-.color-dark-grey{
-    background-color: #857979;
-} 
-
-.color-light-grey{
-    background-color: #DEDEDE;
-}
-
-.color-grey{
-    background-color: #756666;
-}
-
-.color-orange{
-    background-color: #FFBB0F;
-}
-
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 100px;
-    background-color: yellow;
-    padding: 50px;
-  } 
+.gradient {
+    background: rgb(38, 38, 44);
+    background: linear-gradient(90deg, #262525 10%, #0a0a0a 40%);
+  }
+  
+  .fs-nome {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  .bg-escuro {
+    background-color: #131515;
+  }
+  
+  .border-all {
+    border-radius: 20px;
+  }
+  
+  .bg-amarelo{
+    background-color: #f4c430;
+  }
+  
+  .bg-marrom {
+    background-color: #4A2316;
+  }
