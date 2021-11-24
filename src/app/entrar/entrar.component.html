@@ -1,56 +1,40 @@
-<div class="container-fluid color-brown vh-100">
-  <div class="row d-flex align-items-center vh-100">
-    <div class="col-md-6">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <h1 class="text-center text-white md-6">Login</h1>
+<body id="grad-theme" class="container-fluid pt-5 vh-100">
 
-          <div class="form-group text-white">
-            <label for="usuario">Email</label>
-            <input
-              class="form-control color-brown rounded-pill"
-              type="text"
-              name="usuario"
-              id="usuario"
-              placeholder="Digite seu nome:"
-              [(ngModel)]="usuarioLogin.emailUsuario"
-            />
-          </div>
+  <div class="row d-flex justify-content-around align-items-center py-5 m-0">
 
-          <div class="form-group text-white">
-            <label for="senha">Senha</label>
-            <input
-              class="form-control color-brown rounded-pill"
-              type="password"
-              name="senha"
-              id="senha"
-              placeholder="Digite sua senha:"
-              [(ngModel)] = "usuarioLogin.senhaUsuario"
-            />
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <button
-              type="submit"
-              class="btn btn-lg btn-hover-dark rounded-pill"
-              (click)="entrar()"
-            >
-              Login
-            </button>
-          </div>
-
-          <hr class="mt-5 mb-5" />
-          <p class="text-center text-white">
-            Não tem possui uma conta?
-            <a
-              class="text-white color-dark-grey rounded-pill p-1"
-              routerLink="/cadastrar"
-              >Cadastra-se</a
-            >
-          </p>
-        </div>
+  <div class="col-md-4 mr-4">
+      <div id="borda" class="color-dark col-md-12 p-3"> 
+          <div id="logo" class="color-dark my-4"></div>
       </div>
-    </div>
-    <div class="col-md-6 vh-100" id="img-bg"></div>
+      
+      <h1 id="text-color-blue" class="mt-5 ft-size font-weight-bold text-center mr-5">Lampe</h1>
   </div>
-</div>
+      
+  <div id="borda" class="col-md-6 d-flex justify-content-end align-items-center color-dark">
+
+      <div class="row col-md-9 mr-3 mt-4">
+          <div class="col-md-12">
+              <h1 class="text-center text-white">Login</h1>
+          
+              <div class="form-group text-white">
+                  <label for="usuario">Email</label>
+                  <input class="form-control rounded-pill p-4" type="text" name="usuario" id="usuario" placeholder="Digite seu email:" [(ngModel)]="usuarioLogin.emailUsuario">
+              </div>
+  
+              <div class="form-group text-white mt-4">
+                  <label for="senha">Senha</label>
+                  <input class="form-control rounded-pill p-4" type="password" name="senha" id="senha" placeholder="Digite sua senha:" [(ngModel)] = "usuarioLogin.senhaUsuario">
+              </div>
+  
+              <div class="d-flex justify-content-end mr-5 mt-4">
+                  <button type="submit" class="btn btn-lg rounded-pill btn-hover-blue px-4 p-3" (click)="entrar()">Entrar</button>
+              </div>
+  
+              <hr class="my-4">
+              <p class="text-center text-white">Não possui uma conta? <a routerLink="/cadastrar">Cadastre-se</a></p>
+          </div>
+      </div>
+  </div>
+  
+  </div>
+</body>
