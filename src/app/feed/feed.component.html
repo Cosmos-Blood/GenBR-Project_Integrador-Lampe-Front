@@ -1,166 +1,105 @@
-<div class="container-fluid color-dark-grey mt-5 py-4 p-0">
-
-  <div class="d-flex col-md-10 py-4 p-0" id="postagens">
-  
-    <div class="col-md-4 mt-3 p-0">
-
-    
-      <!--NavsTabs-->
-    <ul class="nav nav-tabs bg-dark rounded col-md-10 d-flex justify-content-center p-2 sticky" id="myTab" role="tablist">
-  
-      <!--Todas Postagens-->
-    <li class="nav-item col-md-12 pl-0 mt-3" role="presentation">
-      <a class="nav-link active color-light-grey rounded-pill" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas Postagens</a>
-    </li>
-    <!--Todas Postagens-->
-
-    
-    <!--Procurar Postagens-->
-    <li class="nav-item pl-0 col-md-12 mt-3" role="presentation">
-      <a (click)="getAllTemas()" class="nav-link rounded-pill color-light-grey" id="nav-procurarPostagens-tab" data-toggle="tab" href="#procurarPostagens" role="tab" aria-controls="procurarPostagens" aria-selected="false">Procurar Postagens</a>
-    </li>
-    <!--Procurar Postagens-->
-    
-    <!--Gerar Postagens-->
-    <button class="btn color-light-grey mt-3" data-toggle="modal" data-target="#exampleModal">
-      Criar Postagem
-    </button>
-    <!--Gerar Postagens-->
-    
-  </ul>
-    </div>
-
-  <div class="tab-content col-md-8" id="myTabContent">
-    
-    <!--Conteúdo: Todas Postagens-->
-    <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
-      
-      <div class="card mb-3 color-light-grey">
-        <div *ngFor='let item of listaDePostagens' class="card-body">
-          <small>Publicado por {{item.usuarioPostagem.nomeUsuario}}</small>
-          <h5 class="card-title d-flex justify-content-center">{{item.titulo}}</h5>
-          <small>Tema: {{item.temaPostagem.primarioTema}}</small>
-          <small>{{item.temaPostagem.secundarioTema}}</small>
-          <p class="card-text">{{item.textoPostagem}}
-          </p>
-          <img src="{{item.anexoPostagem}}" class="card-img-bottom">
-          <p class="card-text"><small class="text-muted">Publicado como: {{item.privacidade}}</small></p>
-          <div class="bg-dark">
-        </div>
-        <hr>
-        </div>
-    </div>
-    
-  </div>
-  <!--Conteúdo: Todas Postagens-->
-
-  <!--Conteúdo: Procurar Postagens-->
-  <div class="tab-pane fade" id="procurarPostagens" role="tabpanel" aria-labelledby="nav-procurarPostagens-tab">
-
-    <div *ngFor='let tema of listaDeTemas' class="card mb-3">
-      <div *ngFor='let item of tema.postagens' class="card-body color-light-grey">
-        <small>Publicado por {{item.usuarioPostagem.nomeUsuario}}</small>
-        <h5 class="card-title d-flex justify-content-center">{{item.titulo}}</h5>
-        <small>Tema: {{tema.primarioTema}}</small>
-        <p class="card-text">{{item.textoPostagem}}</p>
-        <div class="bg-dark">
-          <img src="{{item.anexoPostagem}}" class="card-img-bottom">
-        </div>
-        <p class="card-text"><small class="text-muted">Publicado como: {{item.privacidade}}</small></p>
-          <!-- <p class="card-text"><small class="text-muted">Publicado em </small></p> -->
-          <hr>
+<div class="container-fluid gradient p-0 py-5">
+  <div class="row col-md-12 justify-content-end">
+    <!-- Painel -->
+    <div class="col-md-4 d-flex justify-content-center my-5 teste">
+      <div class="w-100 ml-5">
+        <div class="bg-marrom-claro border-all col-md-6 ml-5 shadow">
+          <div class="d-flex align-items-center">
+            <i
+              class="mr-2 fa fa-calendar-o fs-icon text-white"
+              aria-hidden="true"
+            ></i>
+            <p class="mt-3 text-white">Clean-energy</p>
+          </div>
+          <hr class="bg-white" />
+          <div class="d-flex align-items-center">
+            <i
+              class="mr-2 fa fa-calendar-o fs-icon text-white"
+              aria-hidden="true"
+            ></i>
+            <p class="mt-3 text-white">Clean-energy</p>
+          </div>
+          <hr class="bg-white" />
+          <div class="d-flex align-items-center">
+            <i
+              class="mr-2 fa fa-calendar-o fs-icon text-white"
+              aria-hidden="true"
+            ></i>
+            <p class="mt-3 text-white">Clean-energy</p>
+          </div>
+          <hr class="bg-white" />
+          <div class="d-flex align-items-center">
+            <i
+              class="mr-2 fa fa-calendar-o fs-icon text-white"
+              aria-hidden="true"
+            ></i>
+            <p class="mt-3 text-white">Clean-energy</p>
+          </div>
+          <hr class="bg-white" />
+          <div class="d-flex flex-column">
+            <div class="d-flex">
+              <i
+                class="fa fa-plus-square fs-icon text-white mr-2"
+                aria-hidden="true"
+              ></i>
+              <button class="btn btn-orange mb-2">Nova postagem</button>
+            </div>
+            <div class="d-flex">
+              <i
+                class="fa fa-arrow-up fs-icon text-white mr-2"
+                aria-hidden="true"
+              ></i>
+              <button class="btn btn-orange mb-2" (click)="voltarAoTopo()">Subir</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <!--Conteúdo: Procurar Postagens-->
-  </div>
-  
-  <!-- Modal -->
-  <div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Criar nova postagem</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
+
+    <!-- Feed inteiro -->
+    <div class="col-md-8 d-flex justify-content-center my-5">
+      <div class="row d-flex">
+        <div class="w-75 ml-5 mb-2">
+          <button class="btn btn-orange rounded-pill" id="energia">Energia</button>
+        </div>
+
+        <div
+          class="col-md-10 bg-escuro border-all p-3 ml-5 mb-3"
+          *ngFor="let item of listaDePostagens"
         >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="form">
-
-          <input
-          name="titulo"
-          id="titulo"
-          class="form-control mb-4"
-          type="text"
-          placeholder="titulo"
-          [(ngModel)]="postagem.titulo"
-        />
-
-          <input
-            name="texto"
-            id="texto"
-            class="form-control mb-2"
-            type="text"
-            placeholder="Texto"
-            [(ngModel)]="postagem.textoPostagem"
-          />
-          <div>
-            <input [(ngModel)]="postagem.privacidade" type="radio" id="publico" name="drone" value="publico"
-                   checked>
-            <label for="publico">Público</label>
+          <div class="d-flex w-100 justify-content-center mb-3">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <img
+                src="{{ item.usuarioPostagem.foto }}"
+                alt=""
+                width="80px"
+                height="80px"
+                class="rounded-circle bg-dark p-1"
+              />
+              <div>
+                <p class="font-weight-bold text-white">{{item.usuarioPostagem.nomeUsuario}}</p>
+              </div>
+            </div>
+            <div class="bg-light rounded mx-3 w-100 flex-column">
+              <p class="p-1">
+                {{ item.textoPostagem }}
+              </p>
+            </div>
           </div>
-          
-          <div>
-            <input [(ngModel)]="postagem.privacidade" type="radio" id="privado" name="drone" value="privado">
-            <label for="privado">Privado</label>
+          <div class="d-flex justify-content-center flex-column align-items-center">
+            <div class="col-md-10 d-flex align-items-start ml-3">
+              <small class="text-white font-weight-bold">Tema: {{item.temaPostagem.primarioTema}}</small>
+            </div>
+            <img
+              src="{{ item.anexoPostagem }}"
+              alt=""
+              width="700px"
+              height="600px"
+              class="rounded bg-marrom p-2"
+            />
           </div>
-          
-          <textarea
-            class="form-control my-3"
-            name="anexo"
-            id="anexo"
-            cols="30"
-            rows="3"
-            placeholder="Anexo"
-            [(ngModel)]="postagem.anexoPostagem"
-          ></textarea>
-          <select
-            [(ngModel)]="idTema"
-            (change)='findByIdTema()'
-            class="form-control"
-            name="Tema"
-            id="Tema"
-          >
-            <option *ngFor="let tema of listaDeTemas" value="{{ tema.id }}">
-              {{ tema.primarioTema }}
-            </option>
-          </select>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="postPostagem()">
-          Criar postagem
-        </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
-  <!--Modal-->
-</div>
-
