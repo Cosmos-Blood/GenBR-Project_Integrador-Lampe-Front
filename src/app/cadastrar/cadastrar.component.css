@@ -1,64 +1,86 @@
+.hide{
+  width: 10%;
+  height: 10%;
+  position:absolute;
+    top: 90%;
+    z-index:1;
+}
+
 .fs-56{
-    font-size: 56px;
+  font-size: 50px;
+}
+
+#grad-theme {
+  background-image: linear-gradient(#ad4407,#000000, #000000 , #000000, #000000, #000000, #000000, #000000, #000000, #000000);
+}
+
+.color-dark{
+  background-color: #000000;
+}
+
+.color-grey{
+  background-color: #ADADAD;
+}
+
+.color-dark-grey{
+  background-color: #101818;
+}
+
+.color-dark-brown{
+  background-color: #241616;    
+}
+.color-blue{
+  background-color: #4C579E;
+}
+.color-brown{
+  background-color: #412828;
+}
+.color-red{
+  background-color: #ca1010;
+}
+
+#borda {
+  border-radius: 25px;
   }
-  
-  .color-grey{
-    background-color: #ADADAD;
-  }
-  .color-dark-brown{
-    background-color: #241616;    
-  }
-  .color-blue{
-    background-color: #4C579E;
-  }
-  .color-brown{
-    background-color: #412828;
-  }
-  .color-red{
-    background-color: #ca1010;
-  }
-  
-  #image-backgroud{
-    background-image: url('https://i.imgur.com/ulcJRmb.png');
-  
-    min-height: 100vh;
-  
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(255, 255, 255);
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: rgb(255, 255, 255);
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: rgb(255, 255, 255);
-  }
-  
-  .btn-hover-red {
-    background-color: #ca1010;
-    border: none;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    opacity: 0.6;
-    transition: 0.3s;
-  }
-  .btn-hover-red:hover {opacity: 1}
-  
-  .btn-hover-dark {
-    background-color: #000000;
-    border: none;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    opacity: 0.6;
-    transition: 0.3s;
-  }
-  .btn-hover-dark:hover {opacity: 1}
+
+.bg_video{
+	width: 75%; 
+	height: 100%; 
+	z-index: -1000;
+	background-size: cover; 
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(0, 0, 0);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(0, 0, 0);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(0, 0, 0);
+}
+
+.btn-hover-red {
+  background-color: #ca1010;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.btn-hover-red:hover {opacity: 1}
+
+.btn-hover-orange {
+  background-color: #FF6600;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.btn-hover-orange:hover {opacity: 2}
