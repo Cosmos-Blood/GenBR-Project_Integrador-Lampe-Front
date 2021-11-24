@@ -40,16 +40,19 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar() {
     this.usuario.id = this.usuarioId;
-    console.log(this.usuario);
-    this.auth.atualizar(this.usuario).subscribe(() => {
-      alert('Usuário atualizado! Faça login novamente');
-      environment.id = 0;
-      environment.nomeUsuario = '';
-      environment.emailUsuario = '';
-      environment.foto = '';
-      environment.senhaUsuario = '';
-      environment.token = '';
-      this.router.navigate(['/entrar']);
-    });
+    if (this.usuario.senhaUsuario != this.confirmarSenha) {
+      alert('As senhas estão diferentes!');
+    } else {
+      this.auth.atualizar(this.usuario).subscribe(() => {
+        alert('Usuário atualizado! Faça login novamente');
+        environment.id = 0;
+        environment.nomeUsuario = '';
+        environment.emailUsuario = '';
+        environment.foto = '';
+        environment.senhaUsuario = '';
+        environment.token = '';
+        this.router.navigate(['/entrar']);
+      });
+    }
   }
 }
