@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 export class RodapeComponent implements OnInit {
   constructor(public router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   isOkRoute(){
-    if(this.router.url === '/feed'){
+    if(this.router.url === '/eventos'){
       return true;
     }
     return false

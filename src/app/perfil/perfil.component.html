@@ -1,46 +1,105 @@
-<div class="container-fluid color-dark-grey">
-
-    <div class="row d-flex justify-content-center">
-
-        <div class="col-md-7 color-light-grey mt-5 rounded pt-5">
-
-            <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-              
-              <!--Minhas Postagens-->
-              <li class="nav-item bg-white" role="presentation">
-                <a (click)='findByIdUser()' class="nav-link text-white" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Minhas Postagens</a>
-              </li>
-              <!--Minhas Postagens-->
-              
-            </ul>
-
-            <div class="tab-content" id="myTabContent">
-
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    
-                    <div class="card mb-3">
-                    <div *ngFor='let item of usuario.postagens' class="card-body">
-                      <div class="row d-flex col-md-12"> 
-                      <h5 class="card-title d-flex justify-content-center col-md-11">Titulo{{item.titulo}}</h5>
-                      <!-- <div class="dropdown d-flex col-md-1">
-                        <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                        </button>
-                        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item text-white">Editar</a>
-                          <a class="dropdown-item text-danger">Deletar</a>
-                        </div>
-                      </div> -->
-                      </div>
-                      <small>Tema: {{item.temaPostagem.primarioTema}}</small>
-                      <p class="card-text">texto{{item.textoPostagem}}</p>
-                      <img src="{{item.anexoPostagem}}" class="card-img-bottom">
-                          <p class="card-text"><small class="text-muted">Publicado como: {{item.privacidade}}</small></p>
-                          <hr>
-                  </div>
-                    </div>
-                  </div>
-                
-                </div>
+<div class="container-fluid gradient pt-5 mt-4">
+  <div class="d-flex justify-content-center flex-column align-items-center">
+    <div
+      class="col-md-10 d-flex justify-content-center align-items-center mb-3"
+    >
+      <div
+        class="
+          col-md-10
+          justify-content-between
+          d-flex
+          align-items-center
+          bg-escuro
+          border-all
+          text-white
+          fs-nome
+          p-3
+        "
+      >
+        <div class="d-flex">
+          <img
+            src="{{ imgUsuario }}"
+            alt=""
+            width="150px"
+            height="150px"
+            class="rounded-circle ml-3"
+          />
+          <p class="ml-3">{{usuario.nomeUsuario}}</p>
         </div>
+        <div class="d-flex align-self-end">
+          <button
+            class="btn bg-amarelo rounded-pill mr-3 btn-lg font-weight-bold" routerLink="../usuario-edit"
+          >
+            Editar perfil
+          </button>
+        </div>
+      </div>
     </div>
+    <div
+      class="col-md-10 d-flex justify-content-center"
+      *ngFor="let item of usuario.postagens"
+    >
+      <div class="col-md-10 bg-escuro border-all p-3 mb-3">
+        <div class="d-flex mr-3">
+          <div class="dropdown show d-flex w-100 justify-content-end">
+            <a
+              class="btn bg-amarelo dropdown-toggle pl-2 py-0 mb-2 mx-0 mt-0"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fa fa-ellipsis-h color-grey" aria-hidden="true"></i>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex w-100 justify-content-center mb-3">
+          <div>
+            <img
+              src="{{ imgUsuario }}"
+              alt=""
+              width="80px"
+              height="80px"
+              class="rounded-circle bg-dark p-1"
+            />
+          </div>
+          <div class="bg-light rounded mx-3 w-100">
+            <p class="px-3 py-1 m-0">
+              {{ item.textoPostagem }}
+            </p>
+          </div>
+        </div>
+        <div
+          class="
+            d-flex
+            justify-content-center
+            w-100
+            flex-column
+            align-items-center
+          "
+        >
+          <div class="col-md-7 ml-3">
+            <small class="text-white font-weight-bold"
+              >Tema: {{ item.temaPostagem.primarioTema }}</small
+            >
+          </div>
+          <img
+            src="{{ item.anexoPostagem }}"
+            alt=""
+            width="600px"
+            height="600px"
+            class="rounded bg-marrom p-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

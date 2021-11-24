@@ -1,23 +1,41 @@
-.color-dark-grey{
-    background-color: #857979;
-} 
-
-.color-light-grey{
-    background-color: #DEDEDE;
+.gradient {
+  background: rgb(38, 37, 37);
+  background: linear-gradient(
+    90deg,
+    rgba(38, 37, 37, 1) 40%,
+    rgba(18, 18, 20, 1) 79%
+  );
 }
 
-.color-grey{
-    background-color: #756666;
+.teste {
+  width: 100px;
+  height: 50px;
+  margin-top: 150px; /* altura que está do topo */
+  top: 80px; /* altura que vai parar antes do topo */
+  position: sticky;
 }
 
-.color-orange{
-    background-color: #FFBB0F;
+.bg-escuro {
+  background-color: #131515;
 }
 
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 100px;
-    background-color: yellow;
-    padding: 50px;
-  }
+.border-all {
+  border-radius: 20px;
+}
+
+.bg-marrom {
+  background-color: #4a2316;
+}
+
+.bg-marrom-claro {
+  background-color: #4a2316;
+}
+
+.fs-icon {
+  font-size: 30px;
+}
+
+.btn-orange {
+  background-color: #f4c430;
+  font-weight: bold;
+}
