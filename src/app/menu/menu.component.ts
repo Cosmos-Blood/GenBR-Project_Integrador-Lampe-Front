@@ -10,6 +10,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
   imgUsuario: string = environment.foto;
+  nomeUsuario: string = environment.nomeUsuario;
 
   constructor(public auth: AuthService) { }
 
