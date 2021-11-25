@@ -7,6 +7,7 @@ import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-feed',
@@ -38,10 +39,21 @@ export class FeedComponent implements OnInit {
     this.getAllPostagens();
     this.getAllTemas();
 
+    this.refreshToken();
+    
     this.temaService.refreshToken();
     this.postagemService.refreshToken();
     this.auth.refreshToken();
   }
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  };
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
+  
   getAllPostagens() {
     this.postagemService
       .getAllPostagens()
