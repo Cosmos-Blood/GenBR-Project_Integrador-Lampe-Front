@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostagemModel } from 'src/app/model/PostagemModel';
 import { TemaModel } from 'src/app/model/TemaModel';
 import { UsuarioModel } from 'src/app/model/UsuarioModel';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
@@ -17,7 +18,8 @@ export class PostagemEditComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   usuario: UsuarioModel = new UsuarioModel();
@@ -62,7 +64,7 @@ export class PostagemEditComponent implements OnInit {
       .putPostagem(this.postagem)
       .subscribe((resp: PostagemModel) => {
         this.postagem = resp;
-        alert('Postagem atualizada!');
+        this.alerta.showAlertType('Postagem atualizada!');
         this.router.navigate(['/feed']);
       });
   }

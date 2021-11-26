@@ -8,6 +8,7 @@ import { TemaService } from '../service/tema.service';
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-feed',
@@ -27,7 +28,8 @@ export class FeedComponent implements OnInit {
     private auth: AuthService,
     private temaService: TemaService,
     private postagemService: PostagemService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit() {
@@ -95,7 +97,7 @@ export class FeedComponent implements OnInit {
         this.postagem = resp;
         this.getAllPostagens();
         this.postagem = new PostagemModel();
-        alert('Postagem efetuada!');
+        this.alerta.showAlertType('Postagem efetuada!');
       });
   }
 }

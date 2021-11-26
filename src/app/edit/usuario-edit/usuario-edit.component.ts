@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioModel } from 'src/app/model/UsuarioModel';
-import { RodapeComponent } from 'src/app/rodape/rodape.component';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -15,7 +15,7 @@ export class UsuarioEditComponent implements OnInit {
   confirmarSenha: string;
   usuarioId = environment.id;
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private alerta: AlertasService) {}
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -41,10 +41,10 @@ export class UsuarioEditComponent implements OnInit {
   atualizar() {
     this.usuario.id = this.usuarioId;
     if (this.usuario.senhaUsuario != this.confirmarSenha) {
-      alert('As senhas estão diferentes!');
+      this.alerta.showAlertType('As senhas estão diferentes!');
     } else {
       this.auth.atualizar(this.usuario).subscribe(() => {
-        alert('Usuário atualizado! Faça login novamente');
+        this.alerta.showAlertType('Usuário atualizado! Faça login novamente');
         environment.id = 0;
         environment.nomeUsuario = '';
         environment.emailUsuario = '';
