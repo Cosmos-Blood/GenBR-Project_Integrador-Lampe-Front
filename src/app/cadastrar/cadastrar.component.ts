@@ -23,7 +23,14 @@ export class CadastrarComponent implements OnInit {
     this.confirmarSenha = event.target.value;
   }
 
+  noPicture(){
+    this.usuarioModel.foto = 'https://i.imgur.com/Avqx7ov.jpg' 
+  }
+
   cadastrar() {
+    if(this.usuarioModel.foto == null){
+      this.noPicture()
+    }
     if (this.usuarioModel.senhaUsuario != this.confirmarSenha) {
       this.alertas.showAlertType('As senhas estão diferentes');
     } else {
