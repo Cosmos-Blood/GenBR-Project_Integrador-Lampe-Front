@@ -40,7 +40,7 @@ export class FeedComponent implements OnInit {
     this.getAllTemas();
 
     this.refreshToken();
-    
+
     this.temaService.refreshToken();
     this.postagemService.refreshToken();
     this.auth.refreshToken();
@@ -53,16 +53,17 @@ export class FeedComponent implements OnInit {
       headers: new HttpHeaders().set('Authorization', environment.token),
     };
   }
-  
+
   getAllPostagens() {
     this.postagemService
       .getAllPostagens()
       .subscribe((resp: PostagemModel[]) => {
         this.listaDePostagens = resp;
+        this.listaDePostagens.reverse();
       });
   }
 
-  voltarAoTopo(){
+  voltarAoTopo() {
     window.scroll(0, 0);
   }
 
@@ -87,13 +88,13 @@ export class FeedComponent implements OnInit {
     this.postagem.temaPostagem = this.tema;
     this.usuario.id = this.idUsuario;
     this.postagem.usuarioPostagem = this.usuario;
-    this.postagem.privacidade = "Publico"
+    this.postagem.privacidade = 'Publico';
     this.postagemService
       .postPostagem(this.postagem)
       .subscribe((resp: PostagemModel) => {
         this.postagem = resp;
         this.getAllPostagens();
-        this.postagem = new PostagemModel()
+        this.postagem = new PostagemModel();
         alert('Postagem efetuada!');
       });
   }
