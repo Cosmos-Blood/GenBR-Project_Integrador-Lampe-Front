@@ -24,11 +24,12 @@
             height="150px"
             class="rounded-circle ml-3"
           />
-          <p class="ml-3">{{usuario.nomeUsuario}}</p>
+          <p class="ml-3">{{ usuario.nomeUsuario }}</p>
         </div>
         <div class="d-flex align-self-end">
           <button
-            class="btn bg-amarelo rounded-pill mr-3 btn-lg font-weight-bold" routerLink="../usuario-edit"
+            class="btn bg-amarelo rounded-pill mr-3 btn-lg font-weight-bold"
+            routerLink="../usuario-edit"
           >
             Editar perfil
           </button>
@@ -54,9 +55,21 @@
               <i class="fa fa-ellipsis-h color-grey" aria-hidden="true"></i>
             </a>
 
-            <div class="dropdown-menu bg-amarelo" aria-labelledby="dropdownMenuLink">
-              <a [routerLink]="['/postagem-edit', item.id]" class="dropdown-item text-dark font-weight-bold">Editar</a>
-              <a [routerLink]="['/postagem-delete', item.id]" class="dropdown-item text-danger font-weight-bold" href="#">Deletar</a>
+            <div
+              class="dropdown-menu bg-amarelo"
+              aria-labelledby="dropdownMenuLink"
+            >
+              <a
+                [routerLink]="['/postagem-edit', item.id]"
+                class="dropdown-item text-dark font-weight-bold"
+                >Editar</a
+              >
+              <a
+                [routerLink]="['/postagem-delete', item.id]"
+                class="dropdown-item text-danger font-weight-bold"
+                href="#"
+                >Deletar</a
+              >
             </div>
           </div>
         </div>

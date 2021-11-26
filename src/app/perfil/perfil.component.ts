@@ -14,7 +14,7 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent implements OnInit {
-  imgUsuario: string = environment.foto
+  imgUsuario: string = environment.foto;
   listaDeTemas: TemaModel[];
   tema: TemaModel = new TemaModel();
   listaDePostagens: PostagemModel[];

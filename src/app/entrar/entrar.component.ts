@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 console.log("🚀 ~ file: entrar.component.ts ~ line 4 ~ environment", environment)
 console.log("🚀 ~ file: entrar.component.ts ~ line 4 ~ environment", environment)
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -14,7 +15,7 @@ import { AuthService } from '../service/auth.service';
 export class EntrarComponent implements OnInit {
   usuarioLogin: UsuarioLogin = new UsuarioLogin();
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private alerta: AlertasService) {}
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -33,7 +34,7 @@ export class EntrarComponent implements OnInit {
       },
       (erro) => {
         if (erro.status == 400) {
-          alert('Usuario ou senha incorretos');
+          this.alerta.showAlertType('Usuario ou senha incorretos');
         }
       }
     );
