@@ -40,7 +40,6 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar() {
     this.usuario.id = this.usuarioId;
-    console.log(this.usuario)
     if (this.usuario.senhaUsuario != this.confirmarSenha) {
       alert('As senhas estão diferentes!');
     } else {
