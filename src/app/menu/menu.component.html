@@ -79,19 +79,19 @@
 
       <div class="collapse navbar-collapse" *ngIf='auth.logado()' >
 
-          <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
-            <li class="nav-item">
-              <a class="nav-link active text-white font-weight-bold fancy-link" style="font-size: 20px" routerLink="feed"> Feed <span class="sr-only">(current)</span></a>
-            </li>
+        <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link active text-white font-weight-bold fancy-link mr-5" style="font-size: 32px" routerLink="feed"> <i class="fa fa-home font-weight-bold" aria-hidden="true"> </i><span class="sr-only">(current)</span></a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link active text-white font-weight-bold fancy-link" style="font-size: 20px" routerLink="eventos"> Eventos <span class="sr-only">(current)</span></a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white font-weight-bold fancy-link mr-5" style="font-size: 30px" routerLink="eventos"> <i class="fa fa-calendar-o font-weight-bold" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link active text-white font-weight-bold fancy-link" style="font-size: 20px" routerLink="perfil"> Perfil <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
+          <li class="nav-item">
+            <a class="nav-link active text-white font-weight-bold fancy-link" style="font-size: 32px" routerLink="perfil"> <i class="fa fa-user font-weight-bold" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
       </div>
   <!-- /Opções do feed -->
 
@@ -177,10 +177,12 @@
                 aria-expanded="false">{{nomeUsuario}}
             </a>
 
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item font-weight-bold text-dark" routerLink="usuario-edit">Editar</a>
-            <a class="dropdown-item font-weight-bold text-danger" (click)="sair()"  routerLink="entrar">Sair</a>
-          </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item font-weight-bold text-dark" style="font-size: 20px" routerLink="usuario-edit"><i class="fa fa-pencil-square" aria-hidden="true">  Editar </i></a>
+              <a class="dropdown-item font-weight-bold text-danger" style="font-size: 20px" (click)="sair()"  routerLink="entrar">
+                <i class="fa fa-sign-out" aria-hidden="true"> Sair </i>
+              </a>
+            </div>
         </div>
     <!-- /Dropdown para Sair e Configurações, respectivamente -->
 
