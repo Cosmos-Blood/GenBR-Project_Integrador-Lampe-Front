@@ -45,6 +45,7 @@ export class PerfilComponent implements OnInit {
       .getAllPostagens()
       .subscribe((resp: PostagemModel[]) => {
         this.listaDePostagens = resp;
+        this.listaDePostagens.reverse();
       });
   }
   findByIdTema() {

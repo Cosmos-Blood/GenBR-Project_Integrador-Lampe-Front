@@ -1,13 +1,14 @@
 <!-- NavBar -->
-<nav class="navbar navbar-expand-lg cor-navbar fixed-top fancy-link::after">
+<nav class="navbar navbar-expand-lg {{cor}}-navbar fixed-top fancy-link::after" *ngIf="alteraCor()">
 
 
   <!--opção de logo-->
   <!--<a class="navbar-brand text-warning font-weight-bold mb-1" style="font-size: 25px" > <img src="../../assets/foto/logoteste-removebg-preview.png" alt="50px" width="100px"> </a>
   <!--opção de logo-->
   <!-- Nome do projeto -->
-    <a routerLink="/feed"><img src="https://i.imgur.com/NtjxYyo.png" width="40px" height="40px" ></a>
-    <a routerLink="/feed" class="navbar-brand text-white font-weight-bold mb-1 "  style="font-size: 25px"><em>Lampe</em></a>
+    <a *ngIf="auth.divFeed()" routerLink="/feed"><img src="https://i.imgur.com/NtjxYyo.png" width="40px" height="40px" ></a>
+    <a *ngIf="auth.divInicio()" routerLink="/feed" class="navbar-brand text-white font-weight-bold mb-1 "> <img src="https://i.imgur.com/5Z17dqr.png" alt="" width="100px">  </a>
+    <a *ngIf="auth.divFeed()" routerLink="/feed" class="navbar-brand text-white font-weight-bold mb-1 "> <img src="https://i.imgur.com/AXdothT.png" alt="" width="100px">  </a>
   <!-- /Nome do projeto -->
 
   <!-- Botão do menu-->
@@ -39,10 +40,57 @@
             </ul>
         </div> -->
 
+        <!-- Inicio nav -->
+
+        <div class="d-flex justify-content-between w-100" *ngIf="auth.divInicio()">
+          <div class="d-flex justify-content-center w-100">
+            <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
+  
+              <li class="nav-item">
+                <button class="botao nav-link active text-dark font-weight-bold fancy-link" style="font-size: 20px" (click)="scrollInicio()"> Início <span class="sr-only">(current)</span></button>
+              </li>
+      
+              <li class="nav-item">
+                <button class="botao nav-link active text-dark font-weight-bold fancy-link" style="font-size: 20px" (click)="scrollLampe()"> A Lampe <span class="sr-only">(current)</span></button>
+              </li>
+      
+              <li class="nav-item">
+                <button class="botao nav-link active text-dark font-weight-bold fancy-link" style="font-size: 20px" (click)="scrollODS()"> ODS 7 <span class="sr-only">(current)</span></button>
+              </li>
+      
+              <li class="nav-item">
+                <button class="botao nav-link active text-dark font-weight-bold fancy-link" style="font-size: 20px" (click)="scrollTec()"> Tecnologias <span class="sr-only">(current)</span></button>
+              </li>
+      
+              <li class="nav-item">
+                <button class="botao nav-link active text-dark font-weight-bold fancy-link" style="font-size: 20px" (click)="scrollEquipe()"> Equipe <span class="sr-only">(current)</span></button>
+              </li>
+      
+              <li class="nav-item">
+                <button class="botao nav-link active text-dark font-weight-bold fancy-link" style="font-size: 20px" (click)="scrollContato()"> Contato <span class="sr-only">(current)</span></button>
+              </li>
+      
+          </ul>
+          </div>
+          <div class="d-flex">
+            <div>
+              <form class="form-inline my-2 my-lg-0 col-md-1">
+                <button class="button-entrar px-2 btn btn-outline-dark text-white font-weight-light " type="submit" routerLink="/entrar">Entrar</button>
+              </form>
+            </div>
+            <div>
+              <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-dark text-white font-weight-light button-cadastrar" type="submit" routerLink="/cadastrar">Cadastrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Fim inicio nav  -->
 
       <div class="collapse navbar-collapse" *ngIf='auth.logado()' >
 
-        <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center">
+        <ul class="navbar-nav mr-auto navbar-nav ml-auto text-center" *ngIf="auth.divFeed()">
           <li class="nav-item">
             <a class="nav-link active text-white font-weight-bold fancy-link mr-5" style="font-size: 32px" routerLink="feed"> <i class="fa fa-home font-weight-bold" aria-hidden="true"> </i><span class="sr-only">(current)</span></a>
           </li>
@@ -75,7 +123,7 @@
 
       <!-- O trecho abaixo se refere ao icone com a foto do usuário, o mesmo não está funcional -->
 
-      <div>
+      <div *ngIf="auth.divFeed()">
         <li class="d-flex nav-item active list-group mr-3">
           <img class="img-circle" src="{{imgUsuario}}"
               alt=""
@@ -94,24 +142,27 @@
 <!-- WILLIAM - NGIF -->
 
     <!-- Dropdown para Sair e Configurações, respectivamente  | Aqui também iremos usar o recurso de *ngIf -->
+    <div *ngIf="auth.logado()">
+      <div class="dropdown btn btn-outline-dark font-weight-bold rounded-pill mr-5" *ngIf='auth.divFeed()'>
+        <a class="text-white  dropdown-toggle"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">{{nomeUsuario}}
+        </a>
 
-          <div class="dropdown btn btn-outline-dark font-weight-bold rounded-pill mr-5" *ngIf='auth.logado()'>
-            <a class="text-white  dropdown-toggle"
-                href="#"
-                role="button"
-                id="dropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">{{nomeUsuario}}
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item font-weight-bold text-dark" style="font-size: 20px" routerLink="usuario-edit"><i class="fa fa-pencil-square" aria-hidden="true">  Editar </i></a>
-              <a class="dropdown-item font-weight-bold text-danger" style="font-size: 20px" (click)="sair()"  routerLink="entrar">
-                <i class="fa fa-sign-out" aria-hidden="true"> Sair </i>
-              </a>
-            </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item font-weight-bold text-dark" style="font-size: 20px" routerLink="usuario-edit"><i class="fa fa-pencil-square" aria-hidden="true">  Editar </i></a>
+          <a class="dropdown-item font-weight-bold text-danger" style="font-size: 20px" (click)="sair()"  routerLink="/inicio">
+            <i class="fa fa-sign-out" aria-hidden="true"> Sair </i>
+          </a>
         </div>
+    </div>
+    </div>
+
+
     <!-- /Dropdown para Sair e Configurações, respectivamente -->
 
 <!-- /WILLIAM - NGIF -->

@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: "eventos", component: EventosComponent },
   { path: "perfil", component: PerfilComponent },
   { path: "inicio", component: InicioComponent}
-
 ];
 
 @NgModule({
