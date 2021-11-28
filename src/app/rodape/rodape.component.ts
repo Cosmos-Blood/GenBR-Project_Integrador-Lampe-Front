@@ -13,7 +13,7 @@ export class RodapeComponent implements OnInit {
   }
 
   isOkRoute(){
-    if(this.router.url === '/eventos'){
+    if(this.router.url === '/eventos' || this.router.url === '/inicio'){
       return true;
     }
     return false

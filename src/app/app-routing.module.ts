@@ -11,7 +11,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'entrar', pathMatch: 'full' },
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: "entrar", component: EntrarComponent },
   { path: "cadastrar", component: CadastrarComponent },
   { path: "feed", component: FeedComponent },
@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: "eventos", component: EventosComponent },
   { path: "perfil", component: PerfilComponent },
   { path: "inicio", component: InicioComponent}
-
 ];
 
 @NgModule({

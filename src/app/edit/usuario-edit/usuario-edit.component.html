@@ -43,7 +43,7 @@
           <input type="password" class="form-control" id="confirmSenha" name="confirmSenha" [(ngModel)]="usuario.senhaUsuario"/>
         </div>
         <div class="d-flex justify-content-end w-100">
-          <button class="btn btn-danger rounded-pill">Cancelar</button>
+          <button class="btn btn-danger rounded-pill" routerLink="/perfil">Cancelar</button>
           <button class="btn btn-info rounded-pill ml-3" (click)="atualizar()">Atualizar</button>
         </div>
       </form>

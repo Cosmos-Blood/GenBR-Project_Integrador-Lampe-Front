@@ -56,6 +56,26 @@ export class AuthService {
     if (environment.token != '') {
       ok = true;
     }
+    if(this.router.url === '/inicio'){
+      ok = true;
+    }
     return ok;
   }
+
+  divInicio(){
+    let ok2: boolean = false;
+    if(this.router.url === '/inicio'){
+      ok2 = true;
+    } 
+    return ok2;
+  }
+
+  divFeed(){
+    let ok3: boolean = true;
+    if(this.router.url === '/inicio'){
+      ok3 = false;
+    }
+    return ok3
+  }
+
 }
