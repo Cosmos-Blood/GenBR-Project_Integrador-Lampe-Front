@@ -10,6 +10,7 @@
 
 - 📫 Contate-nos pelo E-mail **lampe@outlook.com.br**
 
+- 📄 Saiba mais da equipe: <a href="https://energylampecontato.netlify.app/" target="_blank">https://energylampecontato.netlify.app/</a>
 
 
 
